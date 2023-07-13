@@ -1,0 +1,90 @@
+/* Style général du projet */
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+@font-face {
+    font-family: "Digitaltech-rm0K";
+    src: url(../font/Digitaltech-rm0K.otf);
+}
+
+:root {
+    /* --first-color: ; */
+    --second-color: #f8c499;
+    --green: #0b5743;
+    --light-green: #12dda0;
+    --yellow: #f8f525;
+    --black: #0c0c0c;
+    --white: #fff;
+    --light-bg:rgba(0, 0, 0, 0.185);
+    --light-color: #666;
+}
+
+* {
+    font-family: 'Electrolize', sans-serif;
+    margin: 0; 
+    padding: 0;
+    color: var(--white);
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: .2s linear; 
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+    height: .5rem;
+    color: #000000;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--second-color);
+    border-radius: 20px;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7.5rem;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    width: 100vw;
+    padding: 0 2rem;
+}
+
+button {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    padding: 10px 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+button:hover {
+    font-weight: bold;
+    letter-spacing: .20em;
+    text-shadow: 0 0 1px var(--second-color);
+    color: var(--second-color);
+}
+
+.global {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    background: url(../../assets/images/fde/home/home.png) center/cover no-repeat;
+    z-index: -99;
+}
