@@ -8,7 +8,7 @@
 
 :root {
     /* --first-color: ; */
-    --second-color: #f8c499;
+    --second-color: #f7d5a8;
     --green: #0b5743;
     --light-green: #12dda0;
     --yellow: #f8f525;
@@ -22,7 +22,6 @@
     font-family: 'Electrolize', sans-serif;
     margin: 0; 
     padding: 0;
-    color: var(--white);
     box-sizing: border-box;
     text-decoration: none;
     transition: .2s linear; 
@@ -68,6 +67,7 @@ button {
     padding: 10px 20px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    color: var(--white);
     background-color: transparent;
     transition: all 0.3s ease;
 }
@@ -84,32 +84,98 @@ button:hover {
     align-items: center;
     height: auto;
     min-height: 100vh;
-    background: url(../../assets/images/fde/home/home.png) center/cover no-repeat;
     z-index: -99;
 }
 
-/* Navbar */
-aside {
+.open-btn {
+    cursor: pointer;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    top: 85px;
+    left: 25px;
+    margin: 25px;
+    font-size: 35px;
+}
+
+/* Navbar */
+.sidebar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 1.8rem 0.85rem;
-    width: 30rem;
+    position: fixed;
+    top: 85px;
+    left: -300px;
+    /* left: 0; */
+    width: 300px;
     height: calc(100vh - 80px);
-    border: 2px solid black;
+    backdrop-filter: blur(7px);
+    -webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87); 
+    box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87);
+    transition: left 0.6s ease;
+    z-index: 999;
+    overflow-y: auto;
+}
+.sidebar.active {
+    left: 0;
+    width: 15%;
 }
 
-.navbar .links a:link {
-    margin: 0 1rem;
-    font-size: 2.2rem;
+.sidebar-header {
+    height: 80px;
 }
 
-.navbar .links a:hover {
-    text-decoration: underline;
+.searchbar,
+.close-btn {
+    cursor: pointer;
+    font-size: 35px;
 }
-.navbar .links a:visited {
+.close-btn {
+    position: absolute;
+    top: 9px;
+    right: 0;
+    margin: 15px;
+}
+
+.sidebar-menu {
+    align-self: flex-start;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.sidebar-menu .item {
+    cursor: pointer;
+    position: relative;
+}
+
+.sidebar-menu .item a {
+    display: block;
+    padding: 5px 30px;
+    font-size: 30px;
+    text-decoration: none;
+    line-height: 60px;
     color: var(--white);
+}
+.sidebar-menu .item a:hover {
+    color: var(--second-color);
+}
+
+.item i {
+    margin-right: 15px;
+}
+
+.item a .dropdown {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    transition: 0.3s ease;
+}
+
+.item .sub-menu {
+    display: none;
+}
+
+/* Pied de page */
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    height: 75px;
+    font-size: 1.5rem;
 }

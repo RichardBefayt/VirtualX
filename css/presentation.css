@@ -1,0 +1,11 @@
+.global-presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    color: var(--white);
+    background: url() center/cover no-repeat;
+    z-index: -99;
+}
