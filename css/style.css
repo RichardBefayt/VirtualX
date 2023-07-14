@@ -9,8 +9,8 @@
 :root {
     /* --first-color: ; */
     --second-color: #f7d5a8;
-    --green: #0b5743;
-    --light-green: #12dda0;
+    --blue: #0c63bf;
+    --light-blue: #49dbfe;
     --yellow: #f8f525;
     --black: #0c0c0c;
     --white: #fff;
@@ -77,6 +77,146 @@ button:hover {
     color: var(--second-color);
 }
 
+/* En-tête */
+header {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 75px;
+    margin: 1rem 0;
+}
+
+header .header-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    /* font-size: 2.5rem; */
+}
+
+header .header-link .header-span img {
+    width: 70px;
+    height: 70px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+header h3 {
+    flex-grow: 2;
+    text-align: center;
+    font-family: "Digitaltech-rm0K", cursive;
+    font-size: clamp(2.8rem, 3vw, 12rem);
+}
+
+header .button-container button {
+    margin: 0;
+    /* font-size: 1.3rem; */
+    background-color: transparent;
+}
+header .button-container button:nth-child(1) {
+    margin-right: 1rem;
+}
+
+/* Bouton Se connecter */
+.button-container a button span {
+    display: block;
+    position: absolute;
+    background: var(--second-color);
+}
+.button-container a button span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 50.5%;
+    height: 1.5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.button-container a button:hover span:nth-child(1) {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+.button-container a button span:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: 50.5%;
+    height: 1.5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.button-container a button:hover span:nth-child(2) {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.button-container a button span:nth-child(3) {
+    top: 0;
+    right: 0;
+    width: 1.5px;
+    height: 100%;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    transition-delay: 0.4s;
+}
+.button-container a button:hover span:nth-child(3) {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+.button-container a button span:nth-child(4) {
+    top: 0;
+    left: 0;
+    width: 1.5px;
+    height: 100%;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    transition-delay: 0.4s;
+}
+.button-container a button:hover span:nth-child(4) {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+.button-container a button span:nth-child(5) {
+    right: 0;
+    bottom: 0;
+    width: 50.5%;
+    height: 1.5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.button-container a button:hover span:nth-child(5) {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.button-container a button span:nth-child(5) {
+    left: 0;
+    bottom: 0;
+    width: 50.5%;
+    height: 1.5px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transition-delay: 0.8s;
+}
+.button-container a button:hover span:nth-child(5) {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.button-container a button span:nth-child(6) {
+    right: 0;
+    bottom: 0;
+    width: 50.5%;
+    height: 1.5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transition-delay: 0.8s;
+}
+.button-container a button:hover span:nth-child(6) {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
 .global {
     display: flex;
     flex-direction: column;
@@ -93,7 +233,7 @@ button:hover {
     top: 85px;
     left: 25px;
     margin: 25px;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 /* Navbar */
@@ -102,9 +242,8 @@ button:hover {
     flex-direction: column;
     position: fixed;
     top: 85px;
-    left: -300px;
+    left: -360px;
     /* left: 0; */
-    width: 300px;
     height: calc(100vh - 80px);
     backdrop-filter: blur(7px);
     -webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87); 
@@ -115,23 +254,53 @@ button:hover {
 }
 .sidebar.active {
     left: 0;
-    width: 15%;
+    width: 25%;
 }
 
 .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 80px;
 }
 
 .searchbar,
 .close-btn {
     cursor: pointer;
-    font-size: 35px;
+    top: 9px;
+    margin: 15px;
+    font-size: 25px;
 }
 .close-btn {
-    position: absolute;
-    top: 9px;
     right: 0;
-    margin: 15px;
+    margin-right: 20px;
+}
+
+.open-btn:hover,
+.close-btn:hover {
+    color: var(--second-color);
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    left: 0;
+    width: 65%;
+}
+
+.searchbar input {
+    width: 100%;
+    height: 40px;
+    margin-right: 20px;
+    font-size: 20px;
+    border: 1px solid var(--second-color);
+}
+.searchbar input:focus {
+    outline: none;
+}
+
+.searchbar i:hover {
+    color: var(--second-color);
 }
 
 .sidebar-menu {
@@ -148,7 +317,7 @@ button:hover {
 .sidebar-menu .item a {
     display: block;
     padding: 5px 30px;
-    font-size: 30px;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);;
     text-decoration: none;
     line-height: 60px;
     color: var(--white);
@@ -177,5 +346,53 @@ button:hover {
     margin-top: auto;
     text-align: center;
     height: 75px;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+/* Styles pour les appareils mobiles en orientation portrait */
+@media screen and (max-width: 360px) {
+    header {
+        display: flex;
+        align-items: center;
+        width: 95%;
+        margin: 1rem 0;
+    }
+
+    .button-container a button:nth-child(1) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    button {
+        width: 180px;
+    }
+
+    .sidebar.active {
+        width: 55%;
+    }
+}
+  
+/* Styles pour les tablettes en orientation portrait */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .sidebar.active {
+        width: 45%;
+    }
+}
+
+/* Styles pour les tablettes en orientation paysage */
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    
+}
+
+/* Styles pour les ordinateurs de bureau et laptops */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .sidebar.active {
+        width: 35%;
+    }
+}
+
+/* Styles pour les écrans plus larges et les moniteurs haute résolution */
+@media screen and (min-width: 1201px) {
+
 }
