@@ -16,6 +16,9 @@
     --white: #fff;
     --light-bg:rgba(0, 0, 0, 0.185);
     --light-color: #666;
+    
+    --box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87);
+    ---webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87);
 }
 
 * {
@@ -246,8 +249,8 @@ header .button-container button:nth-child(1) {
     /* left: 0; */
     height: calc(100vh - 80px);
     backdrop-filter: blur(7px);
-    -webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87); 
-    box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87);
+    -webkit-box-shadow: var(---webkit-box-shadow);
+    box-shadow: var(--box-shadow);
     transition: left 0.6s ease;
     z-index: 999;
     overflow-y: auto;
@@ -317,7 +320,7 @@ header .button-container button:nth-child(1) {
 .sidebar-menu .item a {
     display: block;
     padding: 5px 30px;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
     text-decoration: none;
     line-height: 60px;
     color: var(--white);

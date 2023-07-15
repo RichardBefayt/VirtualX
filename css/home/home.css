@@ -10,10 +10,123 @@
 .home {
     flex: 1 1 auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
     min-height: 80vh;
     color: var(--white);
+}
+
+/* Présentation des produits */
+.pres-products {
+    position: relative;
+    width: 60%;
+    height: 300px;
+    background-color: #ffffffd2;
+    backdrop-filter: blur(7px);
+    -webkit-box-shadow: var(---webkit-box-shadow);
+    box-shadow: var(--box-shadow);
+}
+
+.pres-products-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 95%;
+    height: 90%;
+    gap: 5px;
+    background-color: transparent;
+    border: thick double #0c63bf;
+    transform: translate(-50%, -50%);
+}
+
+.pres-products-left {
+    width: 50%;
+    height: auto;
+    color: black;
+    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+}
+
+.pres-products-right {
+    width: 50%;
+    background-color: #0c63bf;
+    /* clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%); */
+}
+
+/* Carrousel */
+.reviews {
+    width: 60%;
+    padding: 20px;
+    backdrop-filter: blur(7px);
+    -webkit-box-shadow: var(---webkit-box-shadow);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.reviews h3 {
+    margin-bottom: 10px;
+    font-size: 3.5em;
+}
+
+.cards-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    overflow-x: visible;
+    animation: 50s slide linear infinite;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+.cards-container::after {
+    content: "";
+    flex: 0 0 125px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 125px;
+    gap: 10px;
+    -webkit-box-shadow: var(---webkit-box-shadow);
+    box-shadow: var(--box-shadow);
+    border: 3px solid var(--white);
+}
+.card:hover {
+    animation-play-state: paused;
+}
+
+.card img {
+    width: 50px;
+    margin-top: 10px;
+    border: 3px solid var(--second-color);
+    border-radius: 50%;
+}
+
+.card-text .name-product {
+    margin-top: 10px;
+}
+
+.card .eval {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.card .eval i {
+    font-size: 1.3em;
+    color: var(--second-color);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-108.5% - 9.75px));
+    }
 }
 
