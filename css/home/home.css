@@ -22,8 +22,7 @@
 .pres-products {
     position: relative;
     width: 60%;
-    height: 300px;
-    background-color: #ffffffd2;
+    height: 400px;
     backdrop-filter: blur(7px);
     -webkit-box-shadow: var(---webkit-box-shadow);
     box-shadow: var(--box-shadow);
@@ -38,27 +37,59 @@
     height: 90%;
     gap: 5px;
     background-color: transparent;
-    border: thick double #0c63bf;
+    border: thick double var(--white);
     transform: translate(-50%, -50%);
 }
 
 .pres-products-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 50%;
     height: auto;
-    color: black;
-    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    padding-left: 20px;
+    color: var(--white);
+}
+
+.pres-products-left .product-title {
+    font-size: 3rem;
+}
+
+.pres-products-left .product-description {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.pres-products-left .product-price {
+    font-size: 1.3rem;
 }
 
 .pres-products-right {
     width: 50%;
-    background-color: #0c63bf;
-    /* clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+.pres-products-right div {
+    width: 90%;
+    height: 90%;
+}
+
+.pres-products-right div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    -webkit-box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.69); 
+box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.69);
 }
 
 /* Carrousel */
 .reviews {
     width: 60%;
-    padding: 20px;
+    padding: 10px;
     backdrop-filter: blur(7px);
     -webkit-box-shadow: var(---webkit-box-shadow);
     box-shadow: var(--box-shadow);
