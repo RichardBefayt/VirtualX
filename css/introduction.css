@@ -1,0 +1,34 @@
+.global-presentation {
+    /* Ajoutez ici vos styles pour la présentation éclair */
+    /* Vous pouvez utiliser les mêmes styles que vous aviez dans votre fichier CSS pour cette classe */
+    /* Assurez-vous d'ajouter une propriété pour masquer la page de présentation après quelques secondes */
+    /* Par exemple, vous pouvez utiliser display: none; pour cacher l'élément */
+    /* Vous pouvez ajouter une animation de fondu ou une transition pour l'effet de disparition */
+    animation: fadeOut 3s ease-in-out;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+}
+
+.title {
+    font-size: 5rem;
+}
+
+.animate__animated.animate__backInLeft {
+    --animate-duration: 2s;
+}
+
+.animate__animated.animate__backInRight {
+    --animate-duration: 3.5s;
+}
+
+.animate__flash {
+    --animate-duration: 3.5s;
+}

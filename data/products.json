@@ -130,61 +130,61 @@
             "name": "SonicWave X1",
             "description": "Le casque audio SonicWave X1 offre une qualité sonore exceptionnelle avec des basses puissantes et des aigus cristallins. Son design ergonomique garantit un confort optimal, même lors d'une écoute prolongée.",
             "price": "149",
-            "img": ""
+            "img": "../assets/images/produits/audio/audio-1.png"
         },
         {
             "name": "HarmonyPro H9",
             "description": "Le HarmonyPro H9 est un casque audio sans fil haut de gamme doté d'une technologie de réduction active du bruit. Il offre une expérience d'écoute immersive et une clarté sonore exceptionnelle.",
             "price": "299",
-            "img": ""
-        },
-        {
-            "name": "SoundStream S6",
-            "description": "Le SoundStream S6 est un casque audio polyvalent adapté aux amateurs de musique et aux professionnels du son. Il offre une reproduction sonore équilibrée et une isolation du bruit environnant.",
-            "price": "99",
-            "img": ""
-        },
-        {
-            "name": "EliteBeats Z3",
-            "description": "L'EliteBeats Z3 est un casque audio pliable idéal pour une utilisation mobile. Il offre un son puissant et une conception légère, ce qui en fait un choix pratique pour les déplacements.",
-            "price": "79",
-            "img": ""
-        },
-        {
-            "name": "AuraBlast V2",
-            "description": "L'AuraBlast V2 est un casque audio abordable avec une qualité sonore étonnante. Il est doté de coussinets confortables et d'une construction solide pour une expérience d'écoute agréable.",
-            "price": "49",
-            "img": ""
-        },
-        {
-            "name": "PulseMax P7",
-            "description": "Le PulseMax P7 est un casque audio haut de gamme conçu pour les audiophiles. Il offre une reproduction audio précise et une réponse en fréquence étendue pour une expérience d'écoute exceptionnelle.",
-            "price": "199",
-            "img": ""
-        },
-        {
-            "name": "TechTune T4",
-            "description": "Le casque audio TechTune T4 offre un son équilibré et une excellente isolation sonore. Il est équipé de commandes intuitives et d'un microphone intégré pour une utilisation pratique.",
-            "price": "69",
-            "img": ""
-        },
-        {
-            "name": "NovaSound N8",
-            "description": "Le NovaSound N8 est un casque audio sans fil avec une autonomie de batterie prolongée. Il offre un confort optimal et une qualité sonore exceptionnelle pour une expérience d'écoute sans interruption.",
-            "price": "129",
-            "img": ""
+            "img": "../assets/images/produits/audio/audio-2.png"
         },
         {
             "name": "PowerSync S4",
             "description": "Le PowerSync S4 est un casque audio polyvalent conçu pour une utilisation quotidienne. Il offre une reproduction sonore claire et un design pliable pour un transport facile.",
             "price": "59",
-            "img": ""
+            "img": "../assets/images/produits/audio/audio-3.png"
+        },
+        {
+            "name": "EliteBeats Z3",
+            "description": "L'EliteBeats Z3 est un casque audio pliable idéal pour une utilisation mobile. Il offre un son puissant et une conception légère, ce qui en fait un choix pratique pour les déplacements.",
+            "price": "79",
+            "img": "../assets/images/produits/audio/audio-4.png"
+        },
+        {
+            "name": "AuraBlast V2",
+            "description": "L'AuraBlast V2 est un casque audio abordable avec une qualité sonore étonnante. Il est doté de coussinets confortables et d'une construction solide pour une expérience d'écoute agréable.",
+            "price": "49",
+            "img": "../assets/images/produits/audio/audio-5.png"
+        },
+        {
+            "name": "PulseMax P7",
+            "description": "Le PulseMax P7 est un casque audio haut de gamme conçu pour les audiophiles. Il offre une reproduction audio précise et une réponse en fréquence étendue pour une expérience d'écoute exceptionnelle.",
+            "price": "199",
+            "img": "../assets/images/produits/audio/audio-6.png"
+        },
+        {
+            "name": "TechTune T4",
+            "description": "Le casque audio TechTune T4 offre un son équilibré et une excellente isolation sonore. Il est équipé de commandes intuitives et d'un microphone intégré pour une utilisation pratique.",
+            "price": "69",
+            "img": "../assets/images/produits/audio/audio-7.png"
+        },
+        {
+            "name": "NovaSound N8",
+            "description": "Le NovaSound N8 est un casque audio sans fil avec une autonomie de batterie prolongée. Il offre un confort optimal et une qualité sonore exceptionnelle pour une expérience d'écoute sans interruption.",
+            "price": "129",
+            "img": "../assets/images/produits/audio/audio-8.png"
+        },
+        {
+            "name": "SoundStream S6",
+            "description": "Le SoundStream S6 est un casque audio polyvalent adapté aux amateurs de musique et aux professionnels du son. Il offre une reproduction sonore équilibrée et une isolation du bruit environnant.",
+            "price": "99",
+            "img": "../assets/images/produits/audio/audio-9.png"
         },
         {
             "name": "EchoFlex E5",
             "description": "L'EchoFlex E5 est un casque audio léger et confortable, idéal pour une utilisation prolongée. Il offre une excellente qualité sonore et une compatibilité universelle avec différents appareils.",
             "price": "39",
-            "img": ""
+            "img": "../assets/images/produits/audio/audio-10.png"
         }
     ],
 
@@ -241,13 +241,13 @@
             "name": "StellarSense S2",
             "description": "Le casque de réalité virtuelle StellarSense S2 est idéal pour les utilisateurs exigeants. Avec sa haute résolution et ses caractéristiques avancées, il offre une immersion réaliste et une expérience VR immersive.",
             "price": "349",
-            "img": ""
+            "img": "../assets/images/produits/casquesVR/casqueVR-9.png"
         },
         {
             "name": "VisionWave V6",
-            "description": "Le casque de réalité virtuelle VisionWave V6 est conçu pour une expérience VR exceptionnelle. Avec sa technologie de pointe et son confort supérieur, il vous plonge dans des mondes virtuels fascinants.",
+            "description": "Le casque de réalité virtuelle VisionWave V6 est conçu pour une expérience VR exceptionnelle. Avec sa technologie de pointe et son confort supérieur, plongez dans des mondes virtuels fascinants.",
             "price": "449",
-            "img": ""
+            "img": "../assets/images/produits/casquesVR/casqueVR-10.png"
         }
     ]
 }  
