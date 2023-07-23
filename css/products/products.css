@@ -28,8 +28,8 @@
 
 .product-card {
     position: relative;
-    min-width: 220px; /* Utiliser min-width à la place de width */
-    height: 320px;
+    min-width: 220px;
+    height: 350px;
     padding: 15px;
     background-color: transparent;
     backdrop-filter: blur(7px);
@@ -47,14 +47,11 @@
     border-radius: 8px;
     transition: 0.5s;
 }
-.product-card .product-card-inner:hover {
-    transform: translateY(-10px);
-}
   
 .product-card-header {
     position: relative;
     margin-bottom: 10px;
-    z-index: 1; /* Définir un index supérieur pour que le titre apparaisse au-dessus de l'image */
+    z-index: 1;
 }
 
 .card-title {
@@ -66,14 +63,17 @@
 }
 
 .product-card .card-middle-img {
-    width: 100%;
-    height: 70%; /* Ajuster la hauteur de l'image */
+    display: inline-block;
+    width: 90%;
+    height: 70%;
     border-radius: 12px;
     overflow: hidden;
     transition: 0.5s;
 }
 .product-card:hover .card-middle-img {
-    scale: 0.85;
+    cursor: pointer;
+    transform: scale(0.85) translateY(-30px);
+    margin-bottom: -50px;
 }
 
 .product-card .card-img {
@@ -84,24 +84,37 @@
     transition: 0.5s;
 }
 .product-card:hover .card-img {
-    transform: translateY(-50px) scale(0.95); /* Ajuster la transformation */
+    transform: translateY(-50px) scale(0.95);
+    border-radius: 12px;
 }
-  
+
+.product-card .product-card-middle .card-description-title {
+    display: none;
+    transition: 0.5s;
+}
+.product-card:hover .product-card-middle .card-description-title {
+    cursor: pointer;
+    display: block;
+    font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+}
+
+.card-description {
+
+}
+
 .product-card-footer {
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     left: 0;
     width: 100%;
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    opacity: 0;
     transition: 0.5s;
 }
 .product-card:hover .product-card-footer {
-    bottom: 10px;
-    opacity: 1;
+    bottom: 0;
 }
   
 .card-price {
