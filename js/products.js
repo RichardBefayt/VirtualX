@@ -43,13 +43,14 @@ function displayProductCards(productsData) {
         cardImg.setAttribute("src", product.img);
         cardImg.setAttribute("alt", product.name);
 
+        const cardLink = document.createElement("a");
+        const productIndex = products.indexOf(product); // Obtient l'index du produit dans le tableau
+        cardLink.setAttribute("href", `product.html?id=${productIndex}`);
+        cardLink.setAttribute("data-id", productIndex);
+
         const cardDescriptionTitle = document.createElement("h4");
         cardDescriptionTitle.classList.add("card-description-title");
         cardDescriptionTitle.textContent = "En savoir plus";
-
-        // const cardDescription = document.createElement("p");
-        // cardDescription.classList.add("card-description");
-        // cardDescription.textContent = product.description;
 
         const cardFooter = document.createElement("div");
         cardFooter.classList.add("product-card-footer");
@@ -73,11 +74,10 @@ function displayProductCards(productsData) {
         cardHeader.appendChild(cardTitle);
         cardImgContainer.appendChild(cardImg);
         cardMiddle.appendChild(cardImgContainer);
-        cardMiddle.appendChild(cardDescriptionTitle);
-        // cardMiddle.appendChild(cardDescription);
+        cardLink.appendChild(cardDescriptionTitle)
+        cardMiddle.appendChild(cardLink);
         cardFooter.appendChild(cardPrice);
         cardFooter.appendChild(cardIconsContainer);
-        
         
         productCardInner.appendChild(cardHeader);
         productCardInner.appendChild(cardMiddle);

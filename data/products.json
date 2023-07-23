@@ -1,60 +1,71 @@
 {
     "vr": [
         {
+            "id": "1",
             "name": "VRXtreme X1",
             "description": "Le casque de réalité virtuelle VRXtreme X1 offre une immersion totale dans les mondes virtuels. Avec son suivi précis et ses graphismes époustouflants, il vous transporte dans des expériences virtuelles incroyables.",
             "price": "399",
-            "img": "../assets/images/produits/casqueVR-1.png"
+            "img": "../assets/images/produits/casqueVR-1.png",
+            "link": "../html/product.html"
         },
         {
+            "id": "2",
             "name": "NovaVision V9",
             "description": "Le casque de réalité virtuelle NovaVision V9 vous plonge dans des environnements virtuels captivants. Son design confortable et son large champ de vision vous permettent de vivre une expérience immersive unique.",
             "price": "299",
             "img": "../assets/images/produits/casqueVR-2.png"
         },
         {
+            "id": "3",
             "name": "QuantumMax Q6",
             "description": "Le casque de réalité virtuelle QuantumMax Q6 offre des performances haut de gamme et une qualité d'affichage exceptionnelle. Avec ses contrôleurs intuitifs, il vous permet d'interagir naturellement avec les mondes virtuels.",
             "price": "499",
             "img": "../assets/images/produits/casqueVR-3.png"
         },
         {
+            "id": "4",
             "name": "ImmersiveZone Z3",
             "description": "L'ImmersiveZone Z3 est un casque de réalité virtuelle abordable qui vous fait découvrir de nouvelles dimensions virtuelles. Il offre une expérience immersive de haute qualité à un prix accessible.",
             "price": "199",
             "img": "../assets/images/produits/casqueVR-4.png"
         },
         {
+            "id": "5",
             "name": "TechSense S7",
             "description": "Le casque de réalité virtuelle TechSense S7 est conçu pour une utilisation professionnelle et de divertissement. Avec sa résolution élevée et sa technologie avancée, il offre une expérience VR réaliste et immersive.",
             "price": "699",
             "img": "../assets/images/produits/casqueVR-5.png"
         },
         {
+            "id": "6",
             "name": "HyperVision H4",
             "description": "L'HyperVision H4 est un casque de réalité virtuelle puissant conçu pour les joueurs passionnés. Avec ses fonctionnalités avancées, sa compatibilité avec les jeux VR populaires et son confort exceptionnel, il offre une expérience de jeu immersive.",
             "price": "599",
             "img": "../assets/images/produits/casqueVR-6.png"
         },
         {
+            "id": "7",
             "name": "FutureGaze F8",
             "description": "Le casque de réalité virtuelle FutureGaze F8 combine performance et polyvalence. Avec sa conception ergonomique et sa large compatibilité, il vous permet de profiter de diverses expériences VR.",
             "price": "249",
             "img": "../assets/images/produits/casqueVR-7.png"
         },
         {
+            "id": "8",
             "name": "PulseVR P5",
             "description": "Le casque de réalité virtuelle PulseVR P5 est conçu pour offrir une expérience de réalité virtuelle haut de gamme. Avec son suivi précis et ses fonctionnalités avancées, il vous transporte dans des mondes virtuels captivants.",
             "price": "799",
             "img": "../assets/images/produits/casqueVR-8.png"
         },
         {
+            "id": "9",
             "name": "StellarSense S2",
             "description": "Le casque de réalité virtuelle StellarSense S2 est idéal pour les utilisateurs exigeants. Avec sa haute résolution et ses caractéristiques avancées, il offre une immersion réaliste et une expérience VR immersive.",
             "price": "349",
             "img": "../assets/images/produits/casqueVR-9.png"
         },
         {
+            "id": "10",
             "name": "VisionWave V6",
             "description": "Le casque de réalité virtuelle VisionWave V6 est conçu pour une expérience VR exceptionnelle. Avec sa technologie de pointe et son confort supérieur, plongez dans des mondes virtuels fascinants.",
             "price": "449",

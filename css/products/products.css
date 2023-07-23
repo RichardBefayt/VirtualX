@@ -71,7 +71,6 @@
     transition: 0.5s;
 }
 .product-card:hover .card-middle-img {
-    cursor: pointer;
     transform: scale(0.85) translateY(-30px);
     margin-bottom: -50px;
 }
@@ -95,11 +94,9 @@
 .product-card:hover .product-card-middle .card-description-title {
     cursor: pointer;
     display: block;
+    padding: 20px;
     font-size: clamp(1.5rem, 1.5vw, 1.5rem);
-}
-
-.card-description {
-
+    color: var(--white);
 }
 
 .product-card-footer {

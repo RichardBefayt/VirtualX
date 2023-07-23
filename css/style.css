@@ -336,17 +336,6 @@ header .button-container button:nth-child(1) {
     margin-right: 15px;
 }
 
-.item a .dropdown {
-    position: absolute;
-    right: 0;
-    margin: 20px;
-    transition: 0.3s ease;
-}
-
-.item .sub-menu {
-    display: none;
-}
-
 /* Pied de page */
 .sidebar-footer {
     margin-top: auto;
