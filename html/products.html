@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Tech-Wave</title>
+    <title>Tech Immersive/Produits</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
                 </span>
             </a>
     
-            <h3>Tech-Wave</h3>
+            <h3>Tech Immersive</h3>
 
             <div class="button-container">
                 <a href="login.html"><button>Se connecter
@@ -58,16 +58,7 @@
                     <a href="products.html">
                         <i class="fa-solid fa-bag-shopping"></i>
                         Produits
-                        <!-- <i class="fas fa-angle-right dropdown"></i> -->
                     </a>
-                    <div class="sub-menu">
-                        <!-- A faire + tard : en cliquant sur la catégorie => filter -->
-                        <a href="" class="sub-item">Appareils photos</a>
-                        <a href="" class="sub-item">Casques audios & Écouteurs</a>
-                        <a href="" class="sub-item">Casques VR</a>
-                        <a href="" class="sub-item">Informatique</a>
-                        <a href="" class="sub-item">Smartphones</a>
-                    </div>
                 </div>
                 <div class="item"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i>Panier</a></div>
                 <div class="item"><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></div>
@@ -82,11 +73,31 @@
         </aside>
 
         <section class="products">
-            
+            <div>
+                <label for="sort">Trier par prix :</label>
+                <select id="sort">
+                    <option value="asc">Prix croissant</option>
+                    <option value="desc">Prix décroissant</option>
+                </select>
+            </div>
+
+            <div class="products-container" id="products-container">
+
+                <!-- favoris non coché -->
+                <!-- <i class="fa-regular fa-bookmark"></i> -->
+
+                <!-- favoris coché -->
+                <!-- <i class="fa-solid fa-bookmark"></i> -->
+
+                <!-- panier -->
+                <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+
+            </div>
         </section>
 
     </div>
 
-    <script src="../js/home.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/products.js"></script>
 </body>
 </html>

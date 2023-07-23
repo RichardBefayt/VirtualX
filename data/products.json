@@ -1,253 +1,64 @@
 {
-    "pc": [
-        {
-            "name": "TechMaster X1",
-            "description": "Le TechMaster X1 est un PC puissant conçu pour les utilisateurs exigeants. Avec son processeur haut de gamme, sa carte graphique performante et sa grande capacité de stockage, il offre des performances exceptionnelles pour les jeux et les tâches intensives.",
-            "price": "1 499",
-            "img": "../assets/images/produits/ordinateurs/ordi-1.png"
-        },
-        {
-            "name": "PowerWave G2",
-            "description": "Le PowerWave G2 est un PC polyvalent qui convient aussi bien aux jeux qu'au multitâche. Son design élégant cache une puissance impressionnante, avec un processeur rapide, une carte graphique dédiée et une mémoire généreuse.",
-            "price": "999",
-            "img": "../assets/images/produits/ordinateurs/ordi-2.png"
-        },
-        {
-            "name": "Velocity Pro Z9",
-            "description": "Le Velocity Pro Z9 est un PC de bureau conçu pour les professionnels créatifs. Grâce à son processeur haute performance et à sa carte graphique spécialisée, il offre des capacités de rendu et de montage vidéo exceptionnelles.",
-            "price": "2 299",
-            "img": "../assets/images/produits/ordinateurs/ordi-3.png"
-        },
-        {
-            "name": "Quantum Elite S4",
-            "description": "Le Quantum Elite S4 est un PC compact idéal pour le gaming. Avec sa carte graphique dédiée de dernière génération et son système de refroidissement avancé, il garantit des performances de jeu fluides et une expérience immersive.",
-            "price": "1 199",
-            "img": "../assets/images/produits/ordinateurs/ordi-4.png"
-        },
-        {
-            "name": "NovaTech Vortex X",
-            "description": "Le NovaTech Vortex X est un PC conçu pour les amateurs de réalité virtuelle. Avec son processeur ultra-rapide et sa carte graphique haut de gamme, il offre une expérience VR immersive sans compromis.",
-            "price": "1 899",
-            "img": "../assets/images/produits/ordinateurs/ordi-5.png"
-        },
-        {
-            "name": "HyperBlade Zephyr T",
-            "description": "L'HyperBlade Zephyr T est un PC de jeu ultime avec des composants haut de gamme et un éclairage LED personnalisable. Sa puissance brute et sa conception futuriste en font une machine de choix pour les gamers passionnés.",
-            "price": "2 499",
-            "img": "../assets/images/produits/ordinateurs/ordi-6.png"
-        },
-        {
-            "name": "AeroForce R7",
-            "description": "L'AeroForce R7 est un PC puissant conçu pour les professionnels en déplacement. Avec sa conception légère et son autonomie prolongée, il offre des performances exceptionnelles même en déplacement.",
-            "price": "1 799",
-            "img": "../assets/images/produits/ordinateurs/ordi-7.png"
-        },
-        {
-            "name": "OmegaStrike Eon S",
-            "description": "L'OmegaStrike Eon S est un PC gaming compact qui ne fait aucun compromis sur les performances. Doté d'un processeur rapide et d'une carte graphique haut de gamme, il est prêt à relever tous les défis des jeux modernes.",
-            "price": "1 399",
-            "img": "../assets/images/produits/ordinateurs/ordi-8.png"
-        },
-        {
-            "name": "StellarTech Horizon M",
-            "description": "Le StellarTech Horizon M est un PC tout-en-un élégant avec un écran tactile haute résolution. Il offre une combinaison parfaite de performances et de fonctionnalités, idéal pour le divertissement et les tâches quotidiennes.",
-            "price": "1 299",
-            "img": "../assets/images/produits/ordinateurs/ordi-9.png"
-        },
-        {
-            "name": "FusionX Ultra Z2",
-            "description": "Le FusionX Ultra Z2 est un PC haut de gamme conçu pour les professionnels de la création et les passionnés de technologie. Avec sa puissance de traitement avancée et ses capacités graphiques exceptionnelles, il offre des performances supérieures pour les tâches exigeantes.",
-            "price": "2 999",
-            "img": "../assets/images/produits/ordinateurs/ordi-10.png"
-        }
-    ],
-
-    "smartphones": [
-        {
-            "name": "NexusPhone X",
-            "description": "Le NexusPhone X est un smartphone élégant doté d'un écran haute résolution et d'une caméra performante. Il offre une expérience utilisateur fluide et polyvalente grâce à ses caractéristiques haut de gamme.",
-            "price": "799",
-            "img": "../assets/images/produits/smartphones/smartphone-1.png"
-        },
-        {
-            "name": "StellarEdge S9",
-            "description": "Le StellarEdge S9 est un smartphone premium avec un design raffiné et des fonctionnalités avancées. Son appareil photo de pointe et son écran vibrant offrent une qualité d'image exceptionnelle.",
-            "price": "1 099",
-            "img": "../assets/images/produits/smartphones/smartphone-2.png"
-        },
-        {
-            "name": "QuantumMax M7",
-            "description": "Le QuantumMax M7 est un smartphone puissant conçu pour les utilisateurs multitâches. Avec son processeur rapide et sa grande capacité de stockage, il permet de gérer facilement les applications les plus exigeantes.",
-            "price": "899",
-            "img": "../assets/images/produits/smartphones/smartphone-3.png"
-        },
-        {
-            "name": "EliteFusion Z6",
-            "description": "L'EliteFusion Z6 est un smartphone haut de gamme qui allie performances et style. Avec son écran AMOLED et sa configuration de caméra avancée, il garantit une expérience visuelle captivante.",
-            "price": "1 299",
-            "img": "../assets/images/produits/smartphones/smartphone-4.png"
-        },
-        {
-            "name": "AuraBlast V2",
-            "description": "L'AuraBlast V2 est un smartphone abordable doté d'un design attrayant et d'une interface utilisateur intuitive. Il offre des fonctionnalités essentielles et une excellente autonomie de batterie.",
-            "price": "399",
-            "img": "../assets/images/produits/smartphones/smartphone-5.png"
-        },
-        {
-            "name": "PulseMax P7",
-            "description": "Le PulseMax P7 est un smartphone axé sur la photographie, avec une caméra haute résolution et des fonctionnalités de capture avancées. Il offre des performances exceptionnelles pour les amateurs de photographie mobile.",
-            "price": "899",
-            "img": "../assets/images/produits/smartphones/smartphone-6.png"
-        },
-        {
-            "name": "TechTune T4",
-            "description": "Le TechTune T4 est un smartphone polyvalent qui se distingue par sa performance et son rapport qualité-prix. Il offre une expérience utilisateur fluide et des fonctionnalités avancées à un prix abordable.",
-            "price": "599",
-            "img": "../assets/images/produits/smartphones/smartphone-7.png"
-        },
-        {
-            "name": "NovaPrime P8",
-            "description": "Le NovaPrime P8 est un smartphone élégant avec un écran bord à bord et une puissance de traitement supérieure. Il est idéal pour les utilisateurs à la recherche d'une expérience haut de gamme.",
-            "price": "1 199",
-            "img": "../assets/images/produits/smartphones/smartphone-8.png"
-        },
-        {
-            "name": "PowerSync S4",
-            "description": "Le PowerSync S4 est un smartphone avec une batterie longue durée et une connectivité fiable. Il est conçu pour les utilisateurs nomades qui ont besoin d'une autonomie prolongée.",
-            "price": "699",
-            "img": "../assets/images/produits/smartphones/smartphone-9.png"
-        },
-        {
-            "name": "EchoFlex E5",
-            "description": "L'EchoFlex E5 est un smartphone compact et léger offrant une portabilité maximale. Il dispose d'une interface utilisateur fluide et de performances solides pour répondre aux besoins quotidiens.",
-            "price": "499",
-            "img": "../assets/images/produits/smartphones/smartphone-10.png"
-        }
-    ],
-
-    "audio": [
-        {
-            "name": "SonicWave X1",
-            "description": "Le casque audio SonicWave X1 offre une qualité sonore exceptionnelle avec des basses puissantes et des aigus cristallins. Son design ergonomique garantit un confort optimal, même lors d'une écoute prolongée.",
-            "price": "149",
-            "img": "../assets/images/produits/audio/audio-1.png"
-        },
-        {
-            "name": "HarmonyPro H9",
-            "description": "Le HarmonyPro H9 est un casque audio sans fil haut de gamme doté d'une technologie de réduction active du bruit. Il offre une expérience d'écoute immersive et une clarté sonore exceptionnelle.",
-            "price": "299",
-            "img": "../assets/images/produits/audio/audio-2.png"
-        },
-        {
-            "name": "PowerSync S4",
-            "description": "Le PowerSync S4 est un casque audio polyvalent conçu pour une utilisation quotidienne. Il offre une reproduction sonore claire et un design pliable pour un transport facile.",
-            "price": "59",
-            "img": "../assets/images/produits/audio/audio-3.png"
-        },
-        {
-            "name": "EliteBeats Z3",
-            "description": "L'EliteBeats Z3 est un casque audio pliable idéal pour une utilisation mobile. Il offre un son puissant et une conception légère, ce qui en fait un choix pratique pour les déplacements.",
-            "price": "79",
-            "img": "../assets/images/produits/audio/audio-4.png"
-        },
-        {
-            "name": "AuraBlast V2",
-            "description": "L'AuraBlast V2 est un casque audio abordable avec une qualité sonore étonnante. Il est doté de coussinets confortables et d'une construction solide pour une expérience d'écoute agréable.",
-            "price": "49",
-            "img": "../assets/images/produits/audio/audio-5.png"
-        },
-        {
-            "name": "PulseMax P7",
-            "description": "Le PulseMax P7 est un casque audio haut de gamme conçu pour les audiophiles. Il offre une reproduction audio précise et une réponse en fréquence étendue pour une expérience d'écoute exceptionnelle.",
-            "price": "199",
-            "img": "../assets/images/produits/audio/audio-6.png"
-        },
-        {
-            "name": "TechTune T4",
-            "description": "Le casque audio TechTune T4 offre un son équilibré et une excellente isolation sonore. Il est équipé de commandes intuitives et d'un microphone intégré pour une utilisation pratique.",
-            "price": "69",
-            "img": "../assets/images/produits/audio/audio-7.png"
-        },
-        {
-            "name": "NovaSound N8",
-            "description": "Le NovaSound N8 est un casque audio sans fil avec une autonomie de batterie prolongée. Il offre un confort optimal et une qualité sonore exceptionnelle pour une expérience d'écoute sans interruption.",
-            "price": "129",
-            "img": "../assets/images/produits/audio/audio-8.png"
-        },
-        {
-            "name": "SoundStream S6",
-            "description": "Le SoundStream S6 est un casque audio polyvalent adapté aux amateurs de musique et aux professionnels du son. Il offre une reproduction sonore équilibrée et une isolation du bruit environnant.",
-            "price": "99",
-            "img": "../assets/images/produits/audio/audio-9.png"
-        },
-        {
-            "name": "EchoFlex E5",
-            "description": "L'EchoFlex E5 est un casque audio léger et confortable, idéal pour une utilisation prolongée. Il offre une excellente qualité sonore et une compatibilité universelle avec différents appareils.",
-            "price": "39",
-            "img": "../assets/images/produits/audio/audio-10.png"
-        }
-    ],
-
     "vr": [
         {
             "name": "VRXtreme X1",
             "description": "Le casque de réalité virtuelle VRXtreme X1 offre une immersion totale dans les mondes virtuels. Avec son suivi précis et ses graphismes époustouflants, il vous transporte dans des expériences virtuelles incroyables.",
             "price": "399",
-            "img": "../assets/images/produits/casquesVR/casqueVR-1.png"
+            "img": "../assets/images/produits/casqueVR-1.png"
         },
         {
             "name": "NovaVision V9",
             "description": "Le casque de réalité virtuelle NovaVision V9 vous plonge dans des environnements virtuels captivants. Son design confortable et son large champ de vision vous permettent de vivre une expérience immersive unique.",
             "price": "299",
-            "img": "../assets/images/produits/casquesVR/casqueVR-2.png"
+            "img": "../assets/images/produits/casqueVR-2.png"
         },
         {
             "name": "QuantumMax Q6",
             "description": "Le casque de réalité virtuelle QuantumMax Q6 offre des performances haut de gamme et une qualité d'affichage exceptionnelle. Avec ses contrôleurs intuitifs, il vous permet d'interagir naturellement avec les mondes virtuels.",
             "price": "499",
-            "img": "../assets/images/produits/casquesVR/casqueVR-3.png"
+            "img": "../assets/images/produits/casqueVR-3.png"
         },
         {
             "name": "ImmersiveZone Z3",
             "description": "L'ImmersiveZone Z3 est un casque de réalité virtuelle abordable qui vous fait découvrir de nouvelles dimensions virtuelles. Il offre une expérience immersive de haute qualité à un prix accessible.",
             "price": "199",
-            "img": "../assets/images/produits/casquesVR/casqueVR-4.png"
+            "img": "../assets/images/produits/casqueVR-4.png"
         },
         {
             "name": "TechSense S7",
             "description": "Le casque de réalité virtuelle TechSense S7 est conçu pour une utilisation professionnelle et de divertissement. Avec sa résolution élevée et sa technologie avancée, il offre une expérience VR réaliste et immersive.",
             "price": "699",
-            "img": "../assets/images/produits/casquesVR/casqueVR-5.png"
+            "img": "../assets/images/produits/casqueVR-5.png"
         },
         {
             "name": "HyperVision H4",
             "description": "L'HyperVision H4 est un casque de réalité virtuelle puissant conçu pour les joueurs passionnés. Avec ses fonctionnalités avancées, sa compatibilité avec les jeux VR populaires et son confort exceptionnel, il offre une expérience de jeu immersive.",
             "price": "599",
-            "img": "../assets/images/produits/casquesVR/casqueVR-6.png"
+            "img": "../assets/images/produits/casqueVR-6.png"
         },
         {
             "name": "FutureGaze F8",
             "description": "Le casque de réalité virtuelle FutureGaze F8 combine performance et polyvalence. Avec sa conception ergonomique et sa large compatibilité, il vous permet de profiter de diverses expériences VR.",
             "price": "249",
-            "img": "../assets/images/produits/casquesVR/casqueVR-7.png"
+            "img": "../assets/images/produits/casqueVR-7.png"
         },
         {
             "name": "PulseVR P5",
             "description": "Le casque de réalité virtuelle PulseVR P5 est conçu pour offrir une expérience de réalité virtuelle haut de gamme. Avec son suivi précis et ses fonctionnalités avancées, il vous transporte dans des mondes virtuels captivants.",
             "price": "799",
-            "img": "../assets/images/produits/casquesVR/casqueVR-8.png"
+            "img": "../assets/images/produits/casqueVR-8.png"
         },
         {
             "name": "StellarSense S2",
             "description": "Le casque de réalité virtuelle StellarSense S2 est idéal pour les utilisateurs exigeants. Avec sa haute résolution et ses caractéristiques avancées, il offre une immersion réaliste et une expérience VR immersive.",
             "price": "349",
-            "img": "../assets/images/produits/casquesVR/casqueVR-9.png"
+            "img": "../assets/images/produits/casqueVR-9.png"
         },
         {
             "name": "VisionWave V6",
             "description": "Le casque de réalité virtuelle VisionWave V6 est conçu pour une expérience VR exceptionnelle. Avec sa technologie de pointe et son confort supérieur, plongez dans des mondes virtuels fascinants.",
             "price": "449",
-            "img": "../assets/images/produits/casquesVR/casqueVR-10.png"
+            "img": "../assets/images/produits/casqueVR-10.png"
         }
     ]
 }  

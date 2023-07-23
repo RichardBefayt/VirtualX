@@ -19,6 +19,9 @@
     
     --box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87);
     ---webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.87);
+
+    ---webkit-box-shadow-img: 1px 1px 13px 5px rgba(0,0,0,0.69); 
+    --box-shadow-img: 1px 1px 13px 5px rgba(0,0,0,0.69);
 }
 
 * {

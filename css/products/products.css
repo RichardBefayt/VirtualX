@@ -1,0 +1,129 @@
+.global-products {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: auto;
+    color: var(--white);
+    background: url(../../assets/images/fde/home/home.png) center/cover no-repeat;
+}
+ 
+/* Milieu de page */
+.products {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+    color: var(--white);
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 20px;
+    margin: 20px auto;
+    justify-items: center;
+}
+
+.product-card {
+    position: relative;
+    min-width: 220px; /* Utiliser min-width à la place de width */
+    height: 320px;
+    padding: 15px;
+    background-color: transparent;
+    backdrop-filter: blur(7px);
+    border-radius: 8px;
+    -webkit-box-shadow: var(---webkit-box-shadow);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.product-card .product-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+.product-card .product-card-inner:hover {
+    transform: translateY(-10px);
+}
+  
+.product-card-header {
+    position: relative;
+    margin-bottom: 10px;
+    z-index: 1; /* Définir un index supérieur pour que le titre apparaisse au-dessus de l'image */
+}
+
+.card-title {
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+}
+  
+.product-card-middle {
+    margin-bottom: 10px;
+}
+
+.product-card .card-middle-img {
+    width: 100%;
+    height: 70%; /* Ajuster la hauteur de l'image */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.product-card:hover .card-middle-img {
+    scale: 0.85;
+}
+
+.product-card .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+.product-card:hover .card-img {
+    transform: translateY(-50px) scale(0.95); /* Ajuster la transformation */
+}
+  
+.product-card-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+.product-card:hover .product-card-footer {
+    bottom: 10px;
+    opacity: 1;
+}
+  
+.card-price {
+    font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+    font-weight: bold;
+}
+
+.card-icons-container {
+    display: flex;
+    gap: 10px;
+}
+
+.card-icon {
+    font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+    cursor: pointer;
+}
+
+.card-icon:hover {
+    transform: scale(1.2);
+}
+
+.card-icon.favorite,
+.card-icon.add-to-cart {
+    color: var(--second-color);
+}
