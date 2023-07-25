@@ -62,6 +62,7 @@
 
 .pres-products-left .product-price {
     font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    color: var(--second-color);
 }
 
 .pres-products-right {

@@ -27,8 +27,8 @@ function displayProduct(productId) {
         return;
     }
 
-    const productLeft = document.querySelector(".product-left");
-    const productImg = productLeft.querySelector(".product-img");
+    const productImgContainer = document.querySelector(".product-img-container");
+    const productImg = productImgContainer.querySelector(".product-img");
     productImg.src = product.img;
     productImg.alt = product.name;
 
