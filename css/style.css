@@ -83,15 +83,17 @@ button:hover {
     color: var(--second-color);
 }
 
-/* En-tête */
+/***** HEADER *****/
 header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 90%;
     height: 75px;
     margin: 1rem 0;
 }
 
+/***** LOGO *****/
 header .header-link {
     display: flex;
     justify-content: center;
@@ -103,16 +105,45 @@ header .header-link {
 header .header-link .header-span img {
     width: 50px;
     height: 50px;
+    margin-right: 15px;
     clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
 }
 
-header h3 {
+/***** NOM DU SITE *****/
+header .header-link h3 {
     flex-grow: 2;
     text-align: center;
     font-family: "Digitaltech-rm0K", cursive;
-    font-size: clamp(2.8rem, 3vw, 12rem);
+    font-size: clamp(2.8rem, 2.5vw, 10rem);
+    color: var(--white);
 }
 
+/**** NAVBAR ****/
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 30px;
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    text-decoration: none;
+    color: var(--white);
+}
+header nav a:hover,
+a i {
+    color: var(--second-color);
+}
+
+a i {
+    margin-right: 15px;
+}
+
+/***** LOG IN *****/
 header .button-container button {
     margin: 0;
     font-size: clamp(0.8rem, 1vw, 1.5rem);
@@ -122,7 +153,6 @@ header .button-container button:nth-child(1) {
     margin-right: 1rem;
 }
 
-/***** Bouton Se connecter *****/
 .button-container a button span {
     display: block;
     position: absolute;
@@ -233,115 +263,158 @@ header .button-container button:nth-child(1) {
     z-index: -99;
 }
 
-.open-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 85px;
-    left: 3vw;
-    margin: 25px;
-    font-size: 25px;
-}
-
-/***** Sidebar *****/
+.open-btn,
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 85px;
-    left: -360px;
-    /* left: 0; */
-    height: calc(100vh - 80px);
-    backdrop-filter: blur(7px);
-    -webkit-box-shadow: var(---webkit-box-shadow);
-    box-shadow: var(--box-shadow);
-    transition: left 0.6s ease;
-    z-index: 999;
-    overflow-y: auto;
-}
-.sidebar.active {
-    left: 0;
-    width: 20%;
+    display: none;
 }
 
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+/* Styles pour les ordinateurs de bureau et laptops */
+@media screen and (max-width: 1038px) {
+    header nav a p:not(i) {
+        display: none;
+    }
+
+    header nav a i {
+        color: var(--white);
+    }
+    header nav a i:hover {
+        color: var(--second-color);
+    }
 }
 
-.searchbar,
-.close-btn {
-    cursor: pointer;
-    top: 9px;
-    margin: 15px;
-    font-size: 20px;
-}
-.close-btn {
-    right: 0;
-    margin-right: 20px;
+/* Styles pour les tablettes en orientation paysage */
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    .sidebar.active {
+        width: 35%;
+    }
 }
 
-.open-btn:hover,
-.close-btn:hover {
-    color: var(--second-color);
+
+/* Styles pour les tablettes en orientation portrait */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    /***** Sidebar *****/
+    .open-btn {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 85px;
+        left: 3vw;
+        margin: 25px;
+        font-size: 25px;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 85px;
+        left: -360px;
+        /* left: 0; */
+        height: calc(100vh - 80px);
+        backdrop-filter: blur(7px);
+        -webkit-box-shadow: var(---webkit-box-shadow);
+        box-shadow: var(--box-shadow);
+        transition: left 0.6s ease;
+        z-index: 999;
+        overflow-y: auto;
+    }
+    .sidebar.active {
+        left: 0;
+        width: 20%;
+    }
+
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    }
+
+    .searchbar,
+    .close-btn {
+        cursor: pointer;
+        top: 9px;
+        margin: 15px;
+        font-size: 20px;
+    }
+    .close-btn {
+        right: 0;
+        margin-right: 20px;
+    }
+
+    .open-btn:hover,
+    .close-btn:hover {
+        color: var(--second-color);
+    }
+
+    .searchbar {
+        display: flex;
+        align-items: center;
+        left: 0;
+        width: 65%;
+    }
+
+    .searchbar input {
+        width: 100%;
+        height: 30px;
+        margin-right: 20px;
+        font-size: 10px;
+        border: 1px solid var(--second-color);
+    }
+    .searchbar input:focus {
+        outline: none;
+    }
+
+    .searchbar i:hover {
+        color: var(--second-color);
+    }
+
+    .sidebar-menu {
+        align-self: flex-start;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .sidebar-menu a {
+        cursor: pointer;
+        position: relative;
+    }
+
+    .sidebar-menu a {
+        display: block;
+        padding: 5px 30px;
+        font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+        text-decoration: none;
+        line-height: 60px;
+        color: var(--white);
+    }
+    .sidebar-menu a:hover {
+        color: var(--second-color);
+    }
+
+    a i {
+        margin-right: 15px;
+    }
+
+    /* Pied de page */
+    .sidebar-footer {
+        margin-top: auto;
+        text-align: center;
+        height: 75px;
+        font-size: clamp(0.5rem, 2vw, 1rem);
+    }
+
 }
 
-.searchbar {
-    display: flex;
-    align-items: center;
-    left: 0;
-    width: 65%;
-}
+@media screen and (max-width: 576px) {
+    .open-btn {
+        /* left: 20px; */
+        font-size: 20px;
+    }
 
-.searchbar input {
-    width: 100%;
-    height: 30px;
-    margin-right: 20px;
-    font-size: 10px;
-    border: 1px solid var(--second-color);
-}
-.searchbar input:focus {
-    outline: none;
-}
-
-.searchbar i:hover {
-    color: var(--second-color);
-}
-
-.sidebar-menu {
-    align-self: flex-start;
-    width: 100%;
-    margin-top: 30px;
-}
-
-.sidebar-menu .item {
-    cursor: pointer;
-    position: relative;
-}
-
-.sidebar-menu .item a {
-    display: block;
-    padding: 5px 30px;
-    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-    text-decoration: none;
-    line-height: 60px;
-    color: var(--white);
-}
-.sidebar-menu .item a:hover {
-    color: var(--second-color);
-}
-
-.item i {
-    margin-right: 15px;
-}
-
-/* Pied de page */
-.sidebar-footer {
-    margin-top: auto;
-    text-align: center;
-    height: 75px;
-    font-size: clamp(0.5rem, 2vw, 1rem);
+    .sidebar.active {
+        width: 55%;
+    }
 }
 
 /* Styles pour les appareils mobiles en orientation portrait */
@@ -363,38 +436,4 @@ header .button-container button:nth-child(1) {
     .button-container a button:nth-child(1) {
         margin-right: 0;
     }
-}
-
-@media screen and (max-width: 576px) {
-    .open-btn {
-        /* left: 20px; */
-        font-size: 20px;
-    }
-
-    .sidebar.active {
-        width: 55%;
-    }
-}
-  
-/* Styles pour les tablettes en orientation portrait */
-@media screen and (min-width: 577px) and (max-width: 768px) {
-    .sidebar.active {
-        width: 45%;
-    }
-}
-
-/* Styles pour les tablettes en orientation paysage */
-@media screen and (min-width: 769px) and (max-width: 991px) {
-    .sidebar.active {
-        width: 35%;
-    }
-}
-
-/* Styles pour les ordinateurs de bureau et laptops */
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-}
-
-/* Styles pour les écrans plus larges et les moniteurs haute résolution */
-@media screen and (min-width: 1201px) {
-
 }
