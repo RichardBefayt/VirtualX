@@ -1,0 +1,6 @@
+.global-user {
+    width: 100vw;
+    max-width: 100vw;
+    color: var(--white);
+    background: url(../../../assets/images/fde/product/product-1.png) center/cover no-repeat;
+}

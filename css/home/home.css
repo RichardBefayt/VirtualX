@@ -50,6 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 150px;
 }
 
 /* Carrousel */
@@ -68,7 +69,6 @@
 .cards-container {
     position: relative;
     display: flex;
-    width: 100%;
     gap: 10px;
     overflow-x: visible;
     animation: 50s slide linear infinite;
@@ -85,6 +85,9 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    min-width: 125px;
+    max-width: 125px;
+    padding: 0 5px;
     -webkit-box-shadow: var(---webkit-box-shadow);
     box-shadow: var(--box-shadow);
     border: 3px solid var(--white);
@@ -106,7 +109,7 @@
 }
 
 .card .eval i {
-    font-size: 1.3em;
+    font-size: 1em;
     color: var(--second-color);
 }
 
@@ -116,7 +119,7 @@
     }
 
     100% {
-        transform: translateX(calc(-108.3% - 9.75px));
+        transform: translateX(calc(-108.25% - 9.75px));
     }
 }
 
@@ -142,6 +145,8 @@
     -webkit-box-shadow: var(---webkit-box-shadow);
     box-shadow: var(--box-shadow);
 }
+
+
 
 .home-down {
     grid-area: 3 / 1 / 4 / 2;
@@ -225,6 +230,8 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
 }
 
 .pres-products-right div img {
@@ -234,3 +241,4 @@
     -webkit-box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.69); 
     box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.69);
 }
+

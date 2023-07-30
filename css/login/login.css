@@ -1,0 +1,188 @@
+.global-login {
+    width: 100vw;
+    max-width: 100vw;
+    color: var(--white);
+    background: url(../../../assets/images/fde/product/product-1.png) center/cover no-repeat;
+}
+
+.login {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    gap: 50px;
+}
+
+form {
+    display: grid;
+    grid-template-rows: repeat(4, 104px);
+    position: relative;
+    width: 50%;
+    min-width: 380px;
+    max-width: 600px;
+    padding: 60px 45px 30px;
+    backdrop-filter: blur(7px);
+    opacity: 0;
+    -webkit-box-shadow: var(---webkit-box-shadow);
+    box-shadow: var(--box-shadow);
+}
+
+.sign-in {
+    transform: translateY(-100%);
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.sign-out {
+    transform: translateY(100%);
+    animation-name: fadeInTop;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-img {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: -30px;
+    left: 50%;
+    border-radius: 150px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.form-img img {
+    width: 100%;
+}
+
+div {
+    transition: 0.2s;
+}
+
+label {
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="password"] {
+    height: 36px;
+    width: 100%;
+    margin: 7px 0 7px;
+    padding-left: 10px;
+    font-size: 1.1rem;
+    background: rgb(235, 244, 242);
+    border: 1px solid transparent;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 1px solid #3d6d89;
+    outline: none;
+}
+
+form span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: red;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+form p {
+    width: 33%;
+    height: 6px;
+    margin: -2px 0 2px;
+    background: red;
+    border-radius: 50px;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+#security span {
+    display: inline;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    margin: 10px;
+    padding: 10px 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+input[type="submit"]:hover {
+    letter-spacing: .20em;
+    text-shadow: 0 0 5px var(--second-color);
+    color: var(--second-color);
+}
+
+.error input {
+    color: red;
+    border: 1px solid rgba(255, 0, 0, 0.527);
+}
+.error span {
+    visibility: visible;
+    opacity: 1;
+    color: red;
+}
+
+.progressRed {
+    background: red;
+    width: 33%;
+    visibility: visible;
+}
+.progressBlue {
+    background: #16d9e7;
+    width: 67%;
+    visibility: visible;
+}
+.progressGreen {
+    width: 100%;
+    background: #5ef9a4;
+    visibility: visible;
+}

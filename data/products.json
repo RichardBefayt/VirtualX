@@ -17,14 +17,14 @@
         },
         {
             "id": "3",
-            "name": "QuantumMax Q6",
+            "name": "Quantum Q6",
             "description": "Le casque de réalité virtuelle QuantumMax Q6 offre des performances haut de gamme et une qualité d'affichage exceptionnelle. Avec ses contrôleurs intuitifs, il vous permet d'interagir naturellement avec les mondes virtuels.",
             "price": "499",
             "img": "../assets/images/produits/casqueVR-3.png"
         },
         {
             "id": "4",
-            "name": "ImmersiveZone Z3",
+            "name": "Immersive Z3",
             "description": "L'ImmersiveZone Z3 est un casque de réalité virtuelle abordable qui vous fait découvrir de nouvelles dimensions virtuelles. Il offre une expérience immersive de haute qualité à un prix accessible.",
             "price": "199",
             "img": "../assets/images/produits/casqueVR-4.png"

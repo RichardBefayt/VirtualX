@@ -1,3 +1,22 @@
+let allProducts = [];
+let previousAnimatedElement = null;
+
+function animateElement(element) {
+    // Si un élément précédent existe, inversez l'animation pour le faire disparaître
+    if (previousAnimatedElement) {
+      previousAnimatedElement.classList.remove('flipInX');
+      previousAnimatedElement.classList.add('flipOutX');
+      previousAnimatedElement.style.animationPlayState = 'running';
+    }
+  
+    element.classList.add('flipInX');
+    element.style.animationPlayState = 'running';
+  
+    // Mise à jour de l'élément précédemment animé
+    previousAnimatedElement = element;
+}
+  
+
 // ***** Présentation des produits ***** //
 async function getAllProductData() {
     try {
@@ -41,6 +60,8 @@ function displayProduct(product) {
     }
 
     let containerLeft = document.querySelector(".pres-products-left");
+    containerLeft.classList.add('animated-content');
+    animateElement(containerLeft);
 
     while (containerLeft.firstChild) {
         containerLeft.removeChild(containerLeft.firstChild);
@@ -69,8 +90,6 @@ function displayRandomProducts(products) {
         displayRandomProducts(products);
     }, 10000);
 }
-
-let allProducts = [];
 
 const categories = ['vr'];
 
