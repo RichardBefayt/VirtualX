@@ -258,7 +258,7 @@ header .button-container button:nth-child(1) {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: auto;
+    /* height: auto; */
     min-height: 100vh;
     z-index: -99;
 }

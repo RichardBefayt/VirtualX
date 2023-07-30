@@ -1,17 +1,18 @@
 .global-product {
     width: 100vw;
     max-width: 100vw;
-    max-height: auto;
     color: var(--white);
-    background: url(../../../assets/images/fde/product/product.png) center/cover no-repeat;
+    background: url(../../../assets/images/fde/product/product-1.png) center/cover no-repeat;
 }
 
 .product {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--white);
-    min-height: 30vh;
 }
 
 .product-back-link {
@@ -29,56 +30,43 @@
 .product-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px;
-    width: 60%;   
+    width: 30vw;
+    height: 70vh;
     backdrop-filter: blur(7px);
+    border: double thick var(--white);
+}
+
+.product-img-container {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.product-img-container img {
+    width: 100%;
+    padding: 10px;
     -webkit-box-shadow: var(---webkit-box-shadow);
     box-shadow: var(--box-shadow);
-    border: thick double var(--white);
-    margin: 0 auto;
-
 }
 
-.product-container .product-img-container,
-.product-container .product-text {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-    color: var(--white);
+.product-text {
+    max-height: 250px;
 }
 
-.product-container .product-img-container {
-    width: 10vw;
+.product-text .product-title {
+    font-size: clamp(1.5rem, 1.2vw, 7rem);
 }
 
-.product-container .product-img-container img {
-    width: 100%;
-    margin: 0 auto;
-    object-fit: cover;
-    background-position: center;
-    -webkit-box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.69); 
-    box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.69);
+.product-text .product-description {
+    padding: 30px 20px;
+    text-align: justify;
+    font-size: clamp(1.3rem, 1vw, 3rem);
+    line-height: 1.5em;
 }
 
-.product-container .product-text {
-    width: 50%;
-}
-
-.product-title {
-    font-size: clamp(1.5rem, 2vw, 5rem);
-}
-
-.product-description {
-    margin: 50px auto;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    line-height: 2;
-}
-
-.product-price {
-    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+.product-text .product-price {
+    font-size: clamp(1.3rem, 1.2vw, 5rem);
     color: var(--second-color);
 }
 
@@ -86,80 +74,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px auto 0;
-    font-size: clamp(1rem, 1.5rem, 2rem);
 }
 
-.product-buttons i {
-    cursor: pointer;
+.product-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
 }
 
-@media screen and (max-width: 1200px) {
-    .product {
-    }
-    
-    .product-container {
-        
-        /* max-width: 70vw;
-        max-height: 70vh; */
-    }
-
-    .product-container .product-img-container,
-    .product-container .product-text {
-        display: block;
-        width: 100%;
-    }
-
-    .product-container .product-img-container img {
-        margin: 0 auto;
-        width: 60%;
-    }
-
-    .product-title {
-        font-size: clamp(1.5rem, 3vw, 3rem);
-    }
-
-    .product-description {
-        font-size: clamp(1.2rem, 2vw, 1.5rem);
-        line-height: 1.5;
-        margin: 20px 0;
-    }
-
-    .product-price {
-        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-    }
-
-    .product-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .product-buttons i {
-
-    }
-
-    .product-favorite-button,
-    .product-cart-button {
-        margin: 5px 0;
-    }
+.product-buttons button i {
+    margin-right: 10px;
 }
-
-@media screen and (max-width: 768px) {
-    .product-buttons {
-        justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .product-buttons i {
-        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-    }
-
-    .product-buttons button {
-        display: none;
-    }
-
-}
-
-  
