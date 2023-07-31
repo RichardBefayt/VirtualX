@@ -46,34 +46,54 @@ function saveCartItems(items) {
   localStorage.setItem('cartItems', JSON.stringify(items));
 }
 
-// Fonction pour afficher les produits du panier
+// Fonction pour afficher les produits du panier avec les boutons pour augmenter/diminuer la quantité
 function displayCartItems() {
   const productsList = document.getElementById('panier');
   const totalAmountElement = document.getElementById('total-panier');
-  const cartItems = getCartItems(); // Assurez-vous que cette ligne est présente
+  const cartItems = getCartItems();
   let totalAmount = 0;
 
   productsList.innerHTML = ''; // Efface la liste des produits du panier
 
   cartItems.forEach(item => {
     const listItem = document.createElement('li');
-    const productPrice = (item.price * (item.quantity || 1)).toFixed(2);
+    const productPrice = parseFloat(item.price).toFixed(2); // Assurer que le prix est un nombre
+    const totalPrice = (item.price * (item.quantity || 1)).toFixed(2);
+
+    // Affichage du produit, prix à l'unité, quantité, boutons "+" et "-"
     listItem.textContent = `${item.name} - ${productPrice} € (Quantité: ${item.quantity || 1})`;
+
+    // Affichage du prix total pour ce produit (prix * quantité)
+    const totalPriceText = document.createElement('span');
+    totalPriceText.textContent = ` - Total: ${totalPrice} €`;
+    listItem.appendChild(totalPriceText);
 
     // Bouton "+" pour augmenter la quantité
     const plusButton = document.createElement('button');
     plusButton.textContent = '+';
-    plusButton.addEventListener('click', () => increaseQuantity(item.id));
+    plusButton.addEventListener('click', () => {
+      increaseQuantity(item.id);
+      totalAmount += parseFloat(item.price);
+      totalAmountElement.textContent = totalAmount.toFixed(2);
+    });
 
     // Bouton "-" pour diminuer la quantité
     const minusButton = document.createElement('button');
     minusButton.textContent = '-';
-    minusButton.addEventListener('click', () => decreaseQuantity(item.id));
+    minusButton.addEventListener('click', () => {
+      decreaseQuantity(item.id);
+      totalAmount -= parseFloat(item.price);
+      totalAmountElement.textContent = totalAmount.toFixed(2);
+    });
 
     // Bouton "Supprimer" pour retirer complètement le produit du panier
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Supprimer';
-    deleteButton.addEventListener('click', () => deleteItem(item.id));
+    deleteButton.addEventListener('click', () => {
+      totalAmount -= parseFloat(totalPrice);
+      totalAmountElement.textContent = totalAmount.toFixed(2);
+      deleteItem(item.id);
+    });
 
     listItem.appendChild(plusButton);
     listItem.appendChild(minusButton);
@@ -81,7 +101,7 @@ function displayCartItems() {
 
     productsList.appendChild(listItem);
 
-    totalAmount += parseFloat(productPrice);
+    totalAmount += parseFloat(totalPrice);
   });
 
   totalAmountElement.textContent = totalAmount.toFixed(2);
