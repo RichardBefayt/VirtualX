@@ -40,6 +40,20 @@ function displayProduct(productId) {
 
     const productPrice = document.querySelector(".product-price");
     productPrice.textContent = product.price + " €";
+
+    const addToCartButton = document.getElementById("addToCartButton");
+    addToCartButton.addEventListener("click", () => addToCart(product.id));
+}
+
+// Fonction pour ajouter un produit au panier en utilisant localStorage
+function addToCart(productId) {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const product = productData.vr.find(item => item.id === productId);
+    if (product) {
+        cartItems.push(product);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert('Produit ajouté au panier !');
+    }
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
