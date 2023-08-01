@@ -49,8 +49,17 @@ function displayProduct(productId) {
 function addToCart(productId) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const product = productData.vr.find(item => item.id === productId);
+
     if (product) {
-        cartItems.push(product);
+        const existingProduct = cartItems.find(item => item.id === productId);
+
+        if (existingProduct) {
+            existingProduct.quantity = (existingProduct.quantity ?? 0) + 1;
+        } else {
+            product.quantity = 1; // Si le produit n'est pas déjà dans le panier, on initialise sa quantité à 1
+            cartItems.push(product);
+        }
+
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
         alert('Produit ajouté au panier !');
     }
