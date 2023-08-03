@@ -18,10 +18,10 @@
     flex-direction: column;
     position: relative;
     width: 50%;
-    height: 580px;
+    min-height: auto;
     min-width: 300px;
     max-width: 450px;
-    padding: 60px 45px 30px;
+    padding: 60px 45px 40px;
     backdrop-filter: blur(7px);
     opacity: 0;
     -webkit-box-shadow: var(---webkit-box-shadow);
@@ -127,7 +127,8 @@ form {
     border-color: #d93025;
 }
 
-.input-field .show-hide {
+.input-field .sign-in-show-hide,
+.input-field .sign-up-show-hide {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -156,11 +157,13 @@ form {
     font-size: 15px;
 }
 
-.password-field .error {
+.sign-in-password-field .error,
+.sign-up-password-field .error {
     align-items: flex-start;
 }
 
-.password-field .error-icon {
+.sign-in-password-field .error-icon,
+.sign-up-password-field .error-icon {
     margin-top: 4px;
 }
 
@@ -172,13 +175,13 @@ form {
     margin: 25px 0 6px;
 }
 
-.button input {
+form .button input {
     cursor: pointer;
     display: block;
-    position: relative;
+    /* position: relative; */
     max-width: 200px;
     height: 40px;
-    margin: 10px auto;
+    margin: auto;
     padding: 10px 20px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -186,7 +189,7 @@ form {
     background-color: transparent;
     transition: all 0.3s ease;
 }
-.button input:hover {
+form .button input:hover {
     letter-spacing: .20em;
     text-shadow: 0 0 5px var(--second-color);
     color: var(--second-color);

@@ -19,9 +19,12 @@
     font-size: clamp(1.5rem, 2vw, 5rem);
 }
 
-.cart-bg {
-
-}
+/* .cart-bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+} */
 
 .cart-bg img {
 
