@@ -54,84 +54,109 @@
 
         <section class="login">
 
-            <div class="login-container">
-                <form action="POST" class="sign-in">
-                    <div class="form-img">
-                        <img src="../assets/images/login/login-1.png" alt="Image d'illustration pour le formulaire">
-                    </div>
+            <div class="form-container sign-in">
+                <div class="form-img">
+                    <img src="../assets/images/login/login-1.png" alt="Image d'illustration pour le formulaire d'inscription">
+                </div>
 
-                    <h3>Se connecter</h3>
-        
-                    <div class="email-container">
-                        <label for="email">Email</label>
-                        <input type="text" autocomplete="off" id="email" />
-        
-                        <!-- span pour message d'erreur -->
-                        <!-- Injecté directement car 1 seul message -->
-                        <span>Email incorrect</span>
-                    </div>
+                <h3>Connexion</h3>
+                
+                <form id="sign-in-form" action="#" method="post">
 
-                    <div class="password-container">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" autocomplete="off" id="password" />
-                        <p id="progress-bar"></p>
-        
-                        <!-- span pour message d'erreur -->
-                        <span></span>
+                    <div class="field email-field">
+                        <label for="email">Email :</label>
+                        <div class="input-field">
+                            <input type="email" id="email">
+                        </div>
+                        <span class="error email error">
+                            <i class='bx bx-error-circle error-icon'></i>
+                            <p class="error-message">Veuillez saisir une adresse email valide</p>
+                        </span>
                     </div>
-
-                    <div class="form-submit">
-                        <input type="submit" value="Valider" />
+        
+                    <div class="field password-field">
+                        <label for="sign-in-password">Mot de passe :</label>
+                        <div class="input-field">
+                            <input type="password" id="sign-in-password">
+                            <i class='bx bx-hide show-hide'></i>
+                        </div>
+                        <span class="error password error">
+                            <i class='bx bx-error-circle error-icon'></i>
+                            <p class="error-message">Le mot de passe doit avoir 8 caractères minimum, une majuscule, un chiffre et un caractère spécial</p>
+                        </span>
                     </div>
                 </form>
+                
+                <div class="button">
+                    <input type="submit" value="Valider"></input>
+                </div>
+            </div>
             
-                <form action="POST" class="sign-out">
-                    <div class="form-img">
-                        <img src="../assets/images/login/login-2.png" alt="Image d'illustration pour le formulaire">
-                    </div>
+            
+            <div class="form-container sign-up">
+                
+                <div class="form-img">
+                    <img src="../assets/images/login/login-2.png" alt="Image d'illustration pour le formulaire d'inscription">
+                </div>
+                
+                <h3>Inscription</h3>
 
-                    <h3>S'inscrire</h3>
+                <form id="sign-up-form" action="#" method="post">
 
-                    <div class="pseudo-container">
-                        <label for="pseudo">Pseudo</label>
-                        <input type="text" autocomplete="off" id="pseudo" />
-        
-                        <!-- span pour message d'erreur -->
-                        <!-- Injecté en JS car 2 messages d'erreur possible -->
-                        <span></span>
+                    <div class="field pseudo-field">
+                        <label for="pseudo">Pseudo :</label>
+                        <div class="input-field">
+                            <input type="text" id="pseudo">
+                        </div>
+                        <span class="error pseudo error">
+                            <i class='bx bx-error-circle error-icon'></i>
+                            <p class="error-message">Le pseudo doit être compris entre 2 et 8 caractères et ne doit pas contenir de caractères spéciaux</p>
+                        </span>
                     </div>
         
-                    <div class="email-container">
-                        <label for="email">Email</label>
-                        <input type="text" autocomplete="off" id="email" />
-        
-                        <!-- span pour message d'erreur -->
-                        <span>Email incorrect</span>
+                    <div class="field email-field">
+                        <label for="email">Email :</label>
+                        <div class="input-field">
+                            <input type="email" id="email">
+                        </div>
+                        <span class="error email error">
+                            <i class='bx bx-error-circle error-icon'></i>
+                            <p class="error-message">Veuillez saisir une adresse email valide</p>
+                        </span>
                     </div>
         
-                    <div class="password-container">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" autocomplete="off" id="password" />
-                        <p id="progress-bar"></p>
-        
-                        <!-- span pour message d'erreur -->
-                        <span></span>
+                    <div class="field password-field">
+                        <label for="sign-up-password">Mot de passe :</label>
+                        <div class="input-field">
+                            <input type="password" id="sign-up-password">
+                            <i class='bx bx-hide show-hide'></i>
+                        </div>
+                        <span class="error password error">
+                            <i class='bx bx-error-circle error-icon'></i>
+                            <p class="error-message">Le mot de passe doit avoir 8 caractères minimum, une majuscule, un chiffre et un caractère spécial</p>
+                        </span>
                     </div>
         
-                    <div class="confirm-container">
-                        <label for="confirm">Confirmer Mot de passe</label>
-                        <input type="password" autocomplete="off" id="confirm" />
-        
-                        <!-- span pour message d'erreur -->
-                        <span></span>
+                    <div class="field confirm-field">
+                        <label for="sign-up-confirm">Confirmer mot de passe :</label>
+                        <div class="input-field">
+                            <input type="password" id="sign-up-confirm">
+                            <i class='bx bx-hide show-hide'></i>
+                        </div>
+                        <span class="error confirm error">
+                            <i class='bx bx-error-circle error-icon'></i>
+                            <p class="error-message">Les mots de passe ne correspondent pas</p>
+                        </span>
                     </div>
         
-                    <div class="form-submit">
-                        <input type="submit" value="Valider" />
-                    </div>
                 </form>
+                
+                <div class="button">
+                    <input type="submit" value="Valider"></input>
+                </div>
 
             </div>
+            
         </section>
 
     </div>
