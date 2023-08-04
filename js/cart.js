@@ -109,7 +109,10 @@ function displayCartItems() {
 
         // Bouton "Supprimer" pour retirer complètement le produit du panier
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Supprimer';
+        const icon = document.createElement('i');
+        icon.className = 'fa-solid fa-trash';
+        deleteButton.appendChild(icon);
+
         deleteButton.addEventListener('click', () => {
             totalAmount -= parseFloat(totalPrice);
             totalAmountElement.textContent = totalAmount.toFixed(2);

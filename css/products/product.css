@@ -41,6 +41,7 @@
     justify-content: space-around;
     align-items: center;
     width: 30vw;
+    min-width: 400px;
     height: 70vh;
     z-index: 10;
 }
@@ -107,4 +108,23 @@
 
 .product-buttons button i {
     margin-right: 10px;
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 991px) {
+    .product-buttons {
+        /* flex-direction: column; */
+        gap: 20px;
+    }
+
+    .product-buttons button i {
+        margin: 0;
+    }
+
+    .product-buttons button p {
+        display: none;
+    }
 }
