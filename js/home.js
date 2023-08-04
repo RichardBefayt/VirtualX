@@ -67,7 +67,7 @@ function displayRandomProducts(products) {
 
     setTimeout(() => {
         displayRandomProducts(products);
-    }, 10000);
+    }, 5000);
 }
 
 let allProducts = [];

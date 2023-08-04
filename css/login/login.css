@@ -122,6 +122,9 @@ form {
     border: 1px solid #d1d1d1;
     outline: none;
 }
+.input-field input:focus {
+    border: .5rem solid var(--dark-blue);
+}
 
 .invalid input {
     border-color: #d93025;
