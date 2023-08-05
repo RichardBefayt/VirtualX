@@ -9,7 +9,7 @@
 :root {
     /* --first-color: ; */
     --second-color: #f7d5a8;
-    --dark-blue: #07162c;
+    --dark-blue: #1b2936;
     --light-blue: #1b2d3c;
     --yellow: #f8f525;
     --black: #0c0c0c;
@@ -56,6 +56,10 @@ html {
 
 body {
     overflow-x: hidden;
+}
+
+.global {
+
 }
 
 section {

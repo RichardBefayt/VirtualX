@@ -46,12 +46,38 @@ function saveCartItems(items) {
     localStorage.setItem('cartItems', JSON.stringify(items));
 }
 
+// Fonction pour afficher le message si le panier est vide
+function displayEmptyCartMessage() {
+    const productsList = document.getElementById('panier');
+    const totalAmountElement = document.getElementById('total-panier');
+
+    // Efface tous les éléments enfants de la liste des produits du panier
+    while (productsList.firstChild) {
+        productsList.removeChild(productsList.firstChild);
+    }
+
+    // Crée un élément de paragraphe (p) pour afficher le message
+    const emptyCartMessage = document.createElement('p');
+    emptyCartMessage.textContent = 'Votre panier est vide.';
+    emptyCartMessage.classList.add('empty-cart-message'); // Ajout de la classe "empty-cart-message"
+
+    // Ajoute l'élément du message au panier
+    productsList.appendChild(emptyCartMessage);
+
+    totalAmountElement.textContent = '0.00';
+}
+
 // Fonction pour afficher les produits du panier avec les boutons pour augmenter/diminuer la quantité
 function displayCartItems() {
     const productsList = document.getElementById('panier');
     const totalAmountElement = document.getElementById('total-panier');
     const cartItems = getCartItems();
     let totalAmount = 0;
+
+    if (cartItems.length === 0) {
+        displayEmptyCartMessage();
+        return;
+    }
 
     productsList.textContent = ''; // Efface la liste des produits du panier
 
@@ -110,7 +136,7 @@ function displayCartItems() {
         // Bouton "Supprimer" pour retirer complètement le produit du panier
         const deleteButton = document.createElement('button');
         const icon = document.createElement('i');
-        icon.className = 'fa-solid fa-trash';
+        icon.className = 'fa-solid fa-ban';
         deleteButton.appendChild(icon);
 
         deleteButton.addEventListener('click', () => {
