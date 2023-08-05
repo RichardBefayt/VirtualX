@@ -1,0 +1,34 @@
+[[redirects]]
+    from = "/"
+    to = "/html/home.html"
+    status = 200
+
+[[redirects]]
+    from = "/home.html"
+    to = "/html/home.html"
+    status = 200
+
+[[redirects]]
+    from = "/products.html"
+    to = "/html/products.html"
+    status = 200
+
+[[redirects]]
+    from = "/product.html"
+    to = "/html/product.html"
+    status = 200
+
+[[redirects]]
+    from = "/cart.html"
+    to = "/html/cart.html"
+    status = 200
+
+[[redirects]]
+    from = "/login.html"
+    to = "/html/login.html"
+    status = 200
+
+[[redirects]]
+    from = "/contact.html"
+    to = "/html/contact.html"
+    status = 200
