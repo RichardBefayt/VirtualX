@@ -104,10 +104,12 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 0 10px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
     transition: 0.5s;
 }
 .product-card:hover .product-card-footer {
