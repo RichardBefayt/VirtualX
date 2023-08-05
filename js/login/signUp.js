@@ -16,11 +16,11 @@ let confirmInput = document.getElementById("sign-up-confirm");
 
 // Validation du pseudo
 const pseudoChecker = () => {
-    const pseudoRegex = /^[a-zA-Z0-9_.-]+$/;
+    // const pseudoRegex = /^[a-zA-Z0-9_.-]+$/;
 
     if (pseudoInput.value.trim() === "") {
         pseudoField.classList.add("invalid");
-    } else if (!pseudoInput.value.match(pseudoRegex) || pseudoInput.value.length < 2 || pseudoInput.value.length > 8) {
+    } else if (pseudoInput.value.length < 2) {
         pseudoField.classList.add("invalid");
     } else {
         pseudoField.classList.remove("invalid");
