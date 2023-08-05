@@ -34,21 +34,6 @@ const pseudoChecker = () => {
     }
 };
 
-// Masquer/Montrer le password
-const SignUpEyeIcons = document.querySelectorAll(".sign-up-show-hide");
-SignUpEyeIcons.forEach((SignUpEyeIcon) => {
-    SignUpEyeIcon.addEventListener("click", () => {
-        const pInput = SignUpEyeIcon.parentElement.querySelector("input");
-        // console.log("pInput :", pInput);
-        if (pInput.type === "password") {
-            SignUpEyeIcon.classList.replace("sign-up-bx-hide", "sign-up-bx-show");
-            return (pInput.type = "text");
-        }
-        SignUpEyeIcon.classList.replace("sign-up-bx-show", "sign-up-bx-hide");
-        pInput.type = "password";
-    });
-});
-
 // Validation de l'email
 const signUpEmailChecker = () => {
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
@@ -81,6 +66,22 @@ const confirmChecker = () => {
     }
 }
 
+// Masquer/Montrer le password
+const SignUpEyeIcons = document.querySelectorAll(".sign-up-show-hide");
+SignUpEyeIcons.forEach((SignUpEyeIcon) => {
+    SignUpEyeIcon.addEventListener("click", () => {
+        const pInput = SignUpEyeIcon.parentElement.querySelector("input");
+        // console.log("pInput :", pInput);
+        if (pInput.type === "password") {
+            SignUpEyeIcon.classList.replace("sign-up-bx-hide", "sign-up-bx-show");
+            return (pInput.type = "text");
+        }
+        SignUpEyeIcon.classList.replace("sign-up-bx-show", "sign-up-bx-hide");
+        pInput.type = "password";
+    });
+});
+
+
 // Soumission du formulaire Inscription
 signUpForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -89,6 +90,13 @@ signUpForm.addEventListener("submit", (event) => {
     signUpEmailChecker();
     signUpPasswordChecker();
     confirmChecker();
+
+    // Vérifie si l'utilisateur a déjà un compte
+    const storedPseudo = localStorage.getItem("storedPseudo");
+    if (storedPseudo && storedPseudo === pseudoInput.value.trim()) {
+        alert("Vous avez déjà un compte. Veuillez vous connecter.");
+        return;
+    }
 
     // Retire l'erreur dès lors que l'utilisateur entre quelque chose de valide
     pseudoInput.addEventListener("keyup", pseudoChecker);
