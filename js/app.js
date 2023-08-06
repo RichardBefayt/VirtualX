@@ -1,3 +1,9 @@
+// ***** Utilisateur ***** //
+function menuToggle() {
+    const toggleMenu = document.querySelector('.menu');
+    toggleMenu.classList.toggle('active');
+}
+
 // ***** Sidebar ***** //
 // const sidebar = document.querySelector('.sidebar');
 // const open = document.querySelector('.open-btn');
@@ -13,6 +19,7 @@
 //     open.style.display = 'block';
 // });
 
+// ***** Redirection ***** //
 // Mettre à jour le bouton "Se connecter" avec le nom d'utilisateur
 document.addEventListener("DOMContentLoaded", () => {
     // Sauvegarder la page précédente dans le localStorage
@@ -45,3 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
