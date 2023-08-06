@@ -14,6 +14,8 @@ let signUpPassInput = document.getElementById("sign-up-password");
 const confirmField = document.querySelector(".confirm-field");
 let confirmInput = document.getElementById("sign-up-confirm");
 
+let isSignUpModalOpen = false;
+
 // Validation du pseudo
 const pseudoChecker = () => {
     // const pseudoRegex = /^[a-zA-Z0-9_.-]+$/;
@@ -129,19 +131,40 @@ signUpForm.addEventListener("submit", (event) => {
         signUpInputs.forEach((signUpInput) => {
             signUpInput.value = "";
         });
-
-        // Après une inscription réussie, nous enregistrons la page précédente dans le localStorage
-        localStorage.setItem("previousPage", document.referrer);
-
+        
         // Tout remettre à zéro, ce qui évite que l'utilisateur renvoie 1 2e fois le form
         pseudoInput = null;
         signUpEmailInput = null;
         signUpPassInput = null;
         confirmInput = null;
         
-        alert("Inscription validée !");
+        signUpSubmitted();
 
     } else {
         alert("Veuillez remplir tous les champs");
     }
 });
+
+// Modale
+function signUpSubmitted() {
+    const signUpModal = document.getElementById('sign-up-modal');
+
+    // Vérifie si la modale est déjà ouverte pour éviter de la réafficher
+    if (!isSignUpModalOpen) {
+        signUpModal.style.display = 'block';
+        isSignUpModalOpen = true;
+
+        // Attache l'événement de fermeture de la modale au bouton "close-modal"
+        const closeModalButton = signUpModal.querySelector('.close-modal');
+        closeModalButton.addEventListener('click', function() {
+            signUpModal.style.display = 'none';
+            isSignUpModalOpen = false;
+
+            // Rediriger l'utilisateur vers la page précédente après la fermeture de la modale
+            const previousPage = localStorage.getItem("previousPage");
+            if (previousPage) {
+                window.location.href = previousPage;
+            }
+        });
+    }
+}

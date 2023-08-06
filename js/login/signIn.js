@@ -52,6 +52,18 @@ const checkLoginCredentials = (email, password) => {
     return email === storedEmail && password === storedPassword;
 };
 
+// Ajoutez la fonction pour afficher la modale de connexion réussie
+function signInSubmitted() {
+    const signInModal = document.getElementById('sign-in-modal');
+    signInModal.style.display = 'block';
+
+    // Attache l'événement de fermeture de la modale après son affichage
+    const closeModalButton = signInModal.querySelector('.close-modal');
+    closeModalButton.addEventListener('click', function() {
+        signInModal.style.display = 'none';
+    });
+}
+
 // Soumission du formulaire Connexion
 signInForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -84,7 +96,8 @@ signInForm.addEventListener("submit", (event) => {
                 signInInput.value = "";
             });
 
-            alert("Connexion réussie !");
+            // Affiche la modale "Connexion réussie"
+            signInSubmitted();
 
             // Rediriger l'utilisateur vers la page précédente ou la page d'accueil après la connexion réussie
             const previousPage = localStorage.getItem("previousPage");
