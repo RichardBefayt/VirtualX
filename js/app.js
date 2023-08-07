@@ -1,9 +1,3 @@
-// ***** Utilisateur ***** //
-function menuToggle() {
-    const toggleMenu = document.querySelector('.menu');
-    toggleMenu.classList.toggle('active');
-}
-
 // ***** Sidebar ***** //
 // const sidebar = document.querySelector('.sidebar');
 // const open = document.querySelector('.open-btn');
@@ -25,31 +19,41 @@ document.addEventListener("DOMContentLoaded", () => {
     // Sauvegarder la page précédente dans le localStorage
     localStorage.setItem("previousPage", document.referrer);
     
+    const navLogin = document.querySelector(".nav-login");
+    const navUser = document.querySelector(".nav-user");
+    const navLogout = document.querySelector(".nav-logout");
+
+    const toggleNavElements = (loggedIn) => {
+        if (loggedIn) {
+            navLogin.style.display = "none";
+            navUser.style.display = "flex";
+            navLogout.style.display = "flex";
+        } else {
+            navLogin.style.display = "flex";
+            navUser.style.display = "none";
+            navLogout.style.display = "none";
+        }
+    };
+
+    // Lire l'état de connexion depuis le localStorage
     const userPseudo = localStorage.getItem("userPseudo");
-    const loginButton = document.querySelector(".button-container button");
 
-    if (userPseudo) {
-        // Mettre à jour le bouton "Se connecter" avec le nom d'utilisateur
-        loginButton.textContent = userPseudo;
+    // Appel initial avec l'état de connexion
+    toggleNavElements(userPseudo !== null);
 
-        // Gérer le clic sur le bouton "Se connecter" (déconnexion ou annulation)
-        loginButton.addEventListener("click", () => {
-            const confirmLogout = confirm("Êtes-vous sûr de vouloir vous déconnecter ?");
-            if (confirmLogout) {
-                // Si l'utilisateur confirme la déconnexion, supprimer le pseudo du localStorage
-                localStorage.removeItem("userPseudo");
-                // Rediriger l'utilisateur vers la page de déconnexion (ou une autre page appropriée)
-                window.location.href = "home.html"; // Remplacez "logout.html" par la page de déconnexion appropriée
-            }
-        });
-    } else {
-        // Le bouton "Se connecter" n'est pas personnalisé, l'utilisateur n'est pas connecté
-        loginButton.textContent = "Se connecter";
-        // Gérer le clic sur le bouton "Se connecter" pour la redirection vers la page de connexion
-        loginButton.addEventListener("click", () => {
-            // Rediriger l'utilisateur vers la page de connexion (ou une autre page appropriée)
-            window.location.href = "home.html"; // Remplacez "login.html" par la page de connexion appropriée
-        });
-    }
+    navLogout.addEventListener("click", () => {
+        const confirmLogout = confirm("Êtes-vous sûr de vouloir vous déconnecter ?");
+
+        if (confirmLogout) {
+            // Supprimer l'état de connexion du localStorage
+            localStorage.removeItem("userPseudo");
+            
+            // Mettre à jour l'affichage de la navigation
+            toggleNavElements(false);
+
+            // Rediriger l'utilisateur vers la page d'accueil ou une autre page appropriée
+            window.location.href = "home.html";
+        }
+    });
 });
 

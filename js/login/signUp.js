@@ -122,19 +122,13 @@ signUpForm.addEventListener("submit", (event) => {
         // Stocker les informations de connexion dans le localStorage
         localStorage.setItem("storedPseudo", pseudoInput.value.trim());
         localStorage.setItem("storedEmail", signUpEmailInput.value.trim());
-        localStorage.setItem("storedPassword", signUpPassInput.value.trim())
+        localStorage.setItem("storedPassword", signUpPassInput.value.trim());
 
         // Vider les inputs après validation
         signUpInputs.forEach((signUpInput) => {
             signUpInput.value = "";
         });
-        
-        // Tout remettre à zéro, ce qui évite que l'utilisateur renvoie 1 2e fois le form
-        pseudoInput = null;
-        signUpEmailInput = null;
-        signUpPassInput = null;
-        confirmInput = null;
-        
+
         alert("Inscription validée !");
 
     } else {

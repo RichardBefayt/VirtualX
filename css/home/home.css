@@ -1,7 +1,6 @@
 .global-home {
     width: 100vw;
     max-width: 100vw;
-    min-height: 100vh;
     color: var(--white);
     background: url(../../assets/images/home/home-bg.png) center/cover no-repeat;
 }
