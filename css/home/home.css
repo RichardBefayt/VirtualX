@@ -7,7 +7,9 @@
  
 /* Milieu de page */
 .home {
-    flex: 1 1 auto;
+    position: absolute;
+    top: 10%;
+    right: 2%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     max-width: 75vw;

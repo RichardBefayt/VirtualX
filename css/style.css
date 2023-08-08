@@ -95,7 +95,7 @@ button:hover {
 /***** HEADER *****/
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 90%;
     height: 75px;
@@ -131,28 +131,97 @@ header .header-link h3:hover {
     color: var(--second-color);
 }
 
-/**** NAVBAR ****/
-header nav {
+/* Sidebar */
+.sidebar {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 85px;
+    left: 0;
+    max-width: 25%;
+    height: calc(100vh - 80px);
+    backdrop-filter: blur(7px);
+    -webkit-box-shadow: var(---webkit-box-shadow);
+    box-shadow: var(--box-shadow);
+    transition: left 0.6s ease;
+    /* z-index: 999; */
+    overflow-y: auto;
 }
 
-header nav a {
+.sidebar-header {
     display: flex;
-    justify-content: center;
-    padding: 5px 30px;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    text-decoration: none;
-    white-space: nowrap;
-    color: var(--white);
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
 }
-header nav a:hover {
+
+.searchbar,
+.close-btn {
+    cursor: pointer;
+    top: 9px;
+    margin: 15px;
+    font-size: 25px;
+}
+.close-btn {
+    right: 0;
+    margin-right: 20px;
+}
+
+.open-btn:hover,
+.close-btn:hover {
     color: var(--second-color);
 }
 
-header nav a i {
+.searchbar {
+    display: flex;
+    align-items: center;
+    left: 0;
+    width: 85%;
+}
+
+.searchbar input {
+    width: 100%;
+    height: 40px;
+    margin-right: 20px;
+    font-size: 20px;
+    border: 1px solid var(--second-color);
+}
+.searchbar input:focus {
+    outline: none;
+}
+
+.searchbar i:hover {
+    color: var(--second-color);
+}
+
+.sidebar-menu {
+    align-self: flex-start;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.sidebar-menu nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.sidebar-menu nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 30px;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    text-decoration: none;
+    line-height: 60px;
+    color: var(--white);
+}
+.sidebar-menu nav a:hover {
+    color: var(--second-color);
+}
+
+.sidebar-menu nav a i {
     margin-right: 15px;
     color: var(--second-color);
 }
@@ -163,157 +232,42 @@ header nav a i {
     width: auto;
 }
 
-.open-btn,
-.sidebar {
-    display: none;
+/* .sidebar-menu .item a {
+    display: block;
+    padding: 5px 30px;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    text-decoration: none;
+    line-height: 60px;
+    color: var(--white);
+}
+.sidebar-menu .item a:hover {
+    color: var(--second-color);
 }
 
-/* Styles pour les ordinateurs de bureau et laptops */
-@media screen and (max-width: 1038px) {
-    header nav a p:not(i) {
-        display: none;
-    }
-
-    header nav a i {
-        color: var(--white);
-    }
-    header nav a i:hover {
-        color: var(--second-color);
-    }
+.item i {
+    margin-right: 15px;
 }
 
-/* Styles pour les tablettes en orientation paysage */
-@media screen and (min-width: 769px) and (max-width: 991px) {
-    .sidebar.active {
-        width: 35%;
-    }
+/* Pied de page */
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    height: 75px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
 
-/* Styles pour les tablettes en orientation portrait */
-@media screen and (min-width: 577px) and (max-width: 768px) {
-    /***** Sidebar *****/
-    .open-btn {
-        display: block;
-        cursor: pointer;
-        position: absolute;
-        top: 85px;
-        left: 3vw;
-        margin: 25px;
-        font-size: 25px;
-    }
-
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 85px;
-        left: -360px;
-        /* left: 0; */
-        height: calc(100vh - 80px);
-        backdrop-filter: blur(7px);
-        -webkit-box-shadow: var(---webkit-box-shadow);
-        box-shadow: var(--box-shadow);
-        transition: left 0.6s ease;
-        z-index: 999;
-        overflow-y: auto;
-    }
-    .sidebar.active {
-        left: 0;
-        width: 20%;
-    }
-
-    .sidebar-header {
+@media screen and (max-width: 768px) {
+    header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 80px;
-    }
-
-    .searchbar,
-    .close-btn {
-        cursor: pointer;
-        top: 9px;
-        margin: 15px;
-        font-size: 20px;
-    }
-    .close-btn {
-        right: 0;
-        margin-right: 20px;
-    }
-
-    .open-btn:hover,
-    .close-btn:hover {
-        color: var(--second-color);
-    }
-
-    .searchbar {
-        display: flex;
-        align-items: center;
-        left: 0;
-        width: 65%;
-    }
-
-    .searchbar input {
-        width: 100%;
-        height: 30px;
-        margin-right: 20px;
-        font-size: 10px;
-        border: 1px solid var(--second-color);
-    }
-    .searchbar input:focus {
-        outline: none;
-    }
-
-    .searchbar i:hover {
-        color: var(--second-color);
-    }
-
-    .sidebar-menu {
-        align-self: flex-start;
-        width: 100%;
-        margin-top: 30px;
-    }
-
-    .sidebar-menu a {
-        cursor: pointer;
-        position: relative;
-    }
-
-    .sidebar-menu a {
-        display: block;
-        padding: 5px 30px;
-        font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-        text-decoration: none;
-        line-height: 60px;
-        color: var(--white);
-    }
-    .sidebar-menu a:hover {
-        color: var(--second-color);
-    }
-
-    a i {
-        margin-right: 15px;
-    }
-
-    /* Pied de page */
-    .sidebar-footer {
-        margin-top: auto;
-        text-align: center;
-        height: 75px;
-        font-size: clamp(0.5rem, 2vw, 1rem);
-    }
-
-}
-
-@media screen and (max-width: 576px) {
-    .open-btn {
-        /* left: 20px; */
-        font-size: 20px;
+        width: 95%;
+        margin: 1rem 0;
     }
 
     .sidebar.active {
-        width: 55%;
+        width: 45%;
     }
 }
 

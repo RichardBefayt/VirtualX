@@ -1,28 +1,11 @@
-// ***** Sidebar ***** //
-// const sidebar = document.querySelector('.sidebar');
-// const open = document.querySelector('.open-btn');
-// const close = document.querySelector('.close-btn');
-
-// open.addEventListener('click', () => {
-//     sidebar.classList.toggle('active');
-//     open.style.display = 'none';
-// });
-
-// close.addEventListener('click', () => {
-//     sidebar.classList.remove('active');
-//     open.style.display = 'block';
-// });
-
-// ***** Redirection ***** //
-// Mettre à jour le bouton "Se connecter" avec le nom d'utilisateur
 document.addEventListener("DOMContentLoaded", () => {
-    // Sauvegarder la page précédente dans le localStorage
+    // Sauvegarde la page précédente dans le localStorage
     localStorage.setItem("previousPage", document.referrer);
     
     const navLogin = document.querySelector(".nav-login");
     const navUser = document.querySelector(".nav-user");
     const navLogout = document.querySelector(".nav-logout");
-
+    
     const toggleNavElements = (loggedIn) => {
         if (loggedIn) {
             navLogin.style.display = "none";
@@ -35,9 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // ***** Redirection ***** //
     // Lire l'état de connexion depuis le localStorage
     const userPseudo = localStorage.getItem("userPseudo");
-
+    
     // Appel initial avec l'état de connexion
     toggleNavElements(userPseudo !== null);
 
@@ -56,4 +40,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
