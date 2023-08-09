@@ -123,7 +123,7 @@ form {
     outline: none;
 }
 .input-field input:focus {
-    border: .5rem solid var(--dark-blue);
+    border: .5rem solid var(--second-color);
 }
 
 .invalid input {

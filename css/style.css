@@ -60,45 +60,18 @@ body {
 }
 
 .global {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
     min-height: 100vh;
-}
-
-section {
-    width: 100vw;
-    padding: 0 2rem;
-}
-
-button {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    max-width: 200px;
-    height: 40px;
-    margin: 10px;
-    padding: 10px 20px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--white);
-    background-color: transparent;
-    transition: all 0.3s ease;
-}
-button:hover {
-    letter-spacing: .20em;
-    text-shadow: 0 0 5px var(--second-color);
-    color: var(--second-color);
 }
 
 /***** HEADER *****/
 header {
+    grid-area: 1 / 1 / 2 / 6;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    height: 75px;
     margin: 1rem 0;
     z-index: 100;
 }
@@ -133,18 +106,20 @@ header .header-link h3:hover {
 
 /* Sidebar */
 .sidebar {
+    grid-area: 2 / 1 / 6 / 2;
+    /* position: fixed;
+    left: 0;
+    bottom: 0; */
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 85px;
-    left: 0;
-    max-width: 25%;
+    min-width: 195px;
+    max-width: 80%;
     height: calc(100vh - 80px);
     backdrop-filter: blur(7px);
     -webkit-box-shadow: var(---webkit-box-shadow);
     box-shadow: var(--box-shadow);
     transition: left 0.6s ease;
-    /* z-index: 999; */
+    z-index: 999;
     overflow-y: auto;
 }
 
@@ -155,21 +130,11 @@ header .header-link h3:hover {
     height: 80px;
 }
 
-.searchbar,
-.close-btn {
+.searchbar {
     cursor: pointer;
     top: 9px;
     margin: 15px;
     font-size: 25px;
-}
-.close-btn {
-    right: 0;
-    margin-right: 20px;
-}
-
-.open-btn:hover,
-.close-btn:hover {
-    color: var(--second-color);
 }
 
 .searchbar {
@@ -187,6 +152,7 @@ header .header-link h3:hover {
     border: 1px solid var(--second-color);
 }
 .searchbar input:focus {
+    border: .5rem solid var(--second-color);
     outline: none;
 }
 
@@ -212,7 +178,7 @@ header .header-link h3:hover {
     justify-content: center;
     align-items: center;
     padding: 5px 30px;
-    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-size: clamp(1.3rem, 1.5vw, 1.5rem);
     text-decoration: none;
     line-height: 60px;
     color: var(--white);
@@ -232,20 +198,29 @@ header .header-link h3:hover {
     width: auto;
 }
 
-/* .sidebar-menu .item a {
-    display: block;
-    padding: 5px 30px;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    text-decoration: none;
-    line-height: 60px;
-    color: var(--white);
-}
-.sidebar-menu .item a:hover {
-    color: var(--second-color);
+section {
+    grid-area: 2 / 2 / 6 / 6;
+    margin: 0 2%;
 }
 
-.item i {
-    margin-right: 15px;
+button {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    max-width: 200px;
+    height: 40px;
+    margin: 10px;
+    padding: 10px 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+button:hover {
+    letter-spacing: .20em;
+    text-shadow: 0 0 5px var(--second-color);
+    color: var(--second-color);
 }
 
 /* Pied de page */
@@ -254,40 +229,4 @@ header .header-link h3:hover {
     text-align: center;
     height: 75px;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
-}
-
-
-@media screen and (max-width: 768px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 95%;
-        margin: 1rem 0;
-    }
-
-    .sidebar.active {
-        width: 45%;
-    }
-}
-
-/* Styles pour les appareils mobiles en orientation portrait */
-@media screen and (max-width: 360px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 95%;
-        margin: 1rem 0;
-    }
-
-    header h3 {
-        display: none;
-    }
-
-
-
-    .button-container a button:nth-child(1) {
-        margin-right: 0;
-    }
 }
