@@ -67,6 +67,15 @@ function displayProductCards(productsData) {
 
         const addToCartIcon = document.createElement("i");
         addToCartIcon.classList.add("card-icon", "fa-solid", "fa-cart-shopping", "add-to-cart");
+        addToCartIcon.setAttribute("data-index", productIndex); // Utilisez productIndex comme attribut
+
+        addToCartIcon.addEventListener("click", (event) => {
+            const productIndex = parseInt(event.target.getAttribute("data-index")); // Utilisez productIndex pour obtenir l'index
+            const selectedProduct = products[productIndex];
+            if (selectedProduct) {
+                addToCart(selectedProduct);
+            }
+        });
         
         cardIconsContainer.appendChild(favoriteIcon);
         cardIconsContainer.appendChild(addToCartIcon);
@@ -87,6 +96,26 @@ function displayProductCards(productsData) {
 
         productsContainer.appendChild(productCard);
     });
+}
+
+// Fonction pour ajouter un produit au panier en utilisant localStorage
+function addToCart(product) {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const existingProduct = cartItems.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        existingProduct.quantity++;
+    } else {
+        cartItems.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    alert('Produit ajouté au panier !');
 }
 
 // Écouteur d'événement pour le menu déroulant de tri

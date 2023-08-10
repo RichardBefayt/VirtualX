@@ -218,7 +218,6 @@ button {
     transition: all 0.3s ease;
 }
 button:hover {
-    letter-spacing: .20em;
     text-shadow: 0 0 5px var(--second-color);
     color: var(--second-color);
 }

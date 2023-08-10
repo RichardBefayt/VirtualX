@@ -86,12 +86,12 @@ signInForm.addEventListener("submit", (event) => {
 
             alert("Connexion réussie !");
 
-            // Rediriger l'utilisateur vers la page précédente ou la page d'accueil après la connexion réussie
+            // Redirige l'utilisateur vers la page précédente ou la page d'accueil après la connexion réussie
             const previousPage = localStorage.getItem("previousPage");
             if (previousPage) {
                 window.location.href = previousPage;
             } else {
-                window.location.href = "home.html"; // Remplacez "home.html" par la page d'accueil appropriée
+                window.location.href = "home.html";
             }
         } else {
             // Si les informations de connexion sont incorrectes

@@ -3,6 +3,25 @@ function getCartItems() {
     return JSON.parse(localStorage.getItem('cartItems')) || [];
 }
 
+function addToCart(product) {
+    const cartItems = getCartItems();
+    const existingItem = cartItems.find(item => item.id === product.id);
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cartItems.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: 1
+        });
+    }
+
+    saveCartItems(cartItems);
+    displayCartItems();
+}
+
 // Fonction pour augmenter la quantité d'un produit dans le panier
 function increaseQuantity(productId) {
     const cartItems = getCartItems();
@@ -20,10 +39,12 @@ function decreaseQuantity(productId) {
     const cartItems = getCartItems();
     const item = cartItems.find(item => item.id === productId);
 
-    if (item && item.quantity > 0) {
-        item.quantity = (item.quantity || 0) - 1;
+    if (item && item.quantity > 1) {  // Ajouter cette condition pour éviter que la quantité ne descende en-dessous de 1
+        item.quantity = item.quantity - 1;
         saveCartItems(cartItems);
         displayCartItems();
+    } else if (item && item.quantity === 1) {
+        deleteItem(productId);  // Si la quantité est égale à 1, supprimer le produit
     }
 }
 
