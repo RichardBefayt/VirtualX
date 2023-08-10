@@ -98,6 +98,27 @@ function displayProductCards(productsData) {
     });
 }
 
+// Fonction de recherche des produits par nom
+function searchProducts(query) {
+    if (!productsData) return []; // Vérifie si les données des produits sont disponibles
+
+    const products = productsData.vr;
+
+    if (!query) return products; // Si la recherche est vide, renvoyer tous les produits
+
+    query = query.toLowerCase();
+    
+    return products.filter(product => product.name.toLowerCase().includes(query));
+}
+
+// Écouteur d'événement pour le champ de recherche
+const searchInput = document.getElementById("search");
+searchInput.addEventListener("input", (event) => {
+    const searchQuery = event.target.value;
+    const filteredProducts = searchProducts(searchQuery);
+    displayProductCards({ "vr": filteredProducts });
+});
+
 // Fonction pour ajouter un produit au panier en utilisant localStorage
 function addToCart(product) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -122,7 +143,12 @@ function addToCart(product) {
 const sortMenu = document.getElementById("sort");
 sortMenu.addEventListener("change", (event) => {
     const selectedSortOrder = event.target.value;
-    sortProducts(selectedSortOrder);
+    
+    if (selectedSortOrder === "default") {
+        displayProductCards(productsData);
+    } else {
+        sortProducts(selectedSortOrder);
+    }
 });
 
 // Trie des produits par prix
