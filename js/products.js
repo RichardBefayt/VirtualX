@@ -18,7 +18,7 @@ function displayProductCards(productsData) {
 
     productsContainer.textContent = "";
 
-    products.forEach(product => {
+    products.forEach((product, index) => {
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
 
@@ -44,9 +44,8 @@ function displayProductCards(productsData) {
         cardImg.setAttribute("alt", product.name);
 
         const cardLink = document.createElement("a");
-        const productIndex = products.indexOf(product); // Obtient l'index du produit dans le tableau
-        cardLink.setAttribute("href", `product.html?id=${productIndex}`);
-        cardLink.setAttribute("data-id", productIndex);
+        cardLink.setAttribute("href", `product.html?id=${product.id}`);
+        cardLink.setAttribute("data-id", product.id);
 
         const cardDescriptionTitle = document.createElement("h4");
         cardDescriptionTitle.classList.add("card-description-title");
@@ -67,11 +66,11 @@ function displayProductCards(productsData) {
 
         const addToCartIcon = document.createElement("i");
         addToCartIcon.classList.add("card-icon", "fa-solid", "fa-cart-shopping", "add-to-cart");
-        addToCartIcon.setAttribute("data-index", productIndex); // Utilisez productIndex comme attribut
+        addToCartIcon.setAttribute("data-id", product.id);
 
         addToCartIcon.addEventListener("click", (event) => {
-            const productIndex = parseInt(event.target.getAttribute("data-index")); // Utilisez productIndex pour obtenir l'index
-            const selectedProduct = products[productIndex];
+            const productId = event.target.getAttribute("data-id");
+            const selectedProduct = products.find(product => product.id === productId);
             if (selectedProduct) {
                 addToCart(selectedProduct);
             }

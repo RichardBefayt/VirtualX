@@ -15,12 +15,12 @@ async function getProductData() {
 // Récupère l'ID du produit à partir de l'URL
 function getProductIdFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
-    return parseInt(urlParams.get('id'));
+    return urlParams.get('id');
 }
 
 // Affiche le produit spécifique en fonction de son ID
 function displayProduct(productId) {
-    const product = productData.vr[productId];
+    const product = productData.vr.find(product => product.id === productId);
 
     if (!product) {
         console.log("Produit introuvable.");
@@ -42,7 +42,7 @@ function displayProduct(productId) {
     productPrice.textContent = product.price + " €";
 
     const addToCartButton = document.getElementById("addToCartButton");
-    addToCartButton.addEventListener("click", () => addToCart(product.id));
+    addToCartButton.addEventListener("click", () => addToCart(productId));
 }
 
 // Fonction pour ajouter un produit au panier en utilisant localStorage
@@ -68,7 +68,7 @@ function addToCart(productId) {
 window.addEventListener('DOMContentLoaded', async () => {
     const productId = getProductIdFromURL();
 
-    if (!isNaN(productId)) {
+    if (productId) { // Vérifier si l'ID existe
         const productData = await getProductData();
         if (productData) {
             displayProduct(productId);
