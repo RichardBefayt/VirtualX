@@ -26,13 +26,6 @@
         
         <aside class="sidebar">
 
-            <div class="sidebar-header">
-                <div class="searchbar">
-                    <input type="search" name="search" id="search" placeholder="Produit" autocomplete="off">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
-
             <div class="sidebar-menu">
                 <nav>
                     <a href="home.html">
@@ -74,13 +67,22 @@
         </aside>
 
         <section class="products">
-            <div>
-                <label for="sort">Trier par prix :</label>
-                <select id="sort">
-                    <option value="default">Par défaut</option>
-                    <option value="asc">Prix croissant</option>
-                    <option value="desc">Prix décroissant</option>
-                </select>
+            <div class="products-header">
+                <div class="sort">
+                    <label for="sort">Affichage</label>
+                    <select id="sort">
+                        <option value="default">Par défaut</option>
+                        <option value="asc">Prix croissant</option>
+                        <option value="desc">Prix décroissant</option>
+                    </select>
+                </div>
+
+                <div class="searchbar">
+                    <label for="search">Recherche</label>
+                        <input type="search" name="search" id="search" autocomplete="off">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                
             </div>
 
             <div class="products-container" id="products-container">
@@ -90,7 +92,6 @@
     </div>
 
     <script src="../js/app.js"></script>
-    <script src="../js/cart.js"></script>
     <script src="../js/products.js"></script>
 </body>
 </html>
