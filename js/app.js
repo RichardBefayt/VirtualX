@@ -2,9 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Sauvegarde la page précédente dans le localStorage
     localStorage.setItem("previousPage", document.referrer);
     
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarBtn = document.querySelector('.sidebar-button');
+    
     const navLogin = document.querySelector(".nav-login");
     const navUser = document.querySelector(".nav-user");
     const navLogout = document.querySelector(".nav-logout");
+
+    sidebarBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    });
     
     const toggleNavElements = (loggedIn) => {
         if (loggedIn) {
