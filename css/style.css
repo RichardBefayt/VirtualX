@@ -70,6 +70,7 @@ body {
 
 .global {
     display: flex;
+    justify-content: center;
     min-height: 100vh;
 }
 
@@ -120,7 +121,11 @@ body {
 .sidebar header {
     position: relative;
 }
-/* .header-container = .header-container */
+
+header .header-container {
+    display: flex;
+}
+
 header .header-container .header-link {
     display: flex;
     align-items: center;
@@ -131,7 +136,7 @@ header .header-container img {
     clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
 }
 
-header .header-container .header-link .header-title {
+header .header-container .header-title {
     text-align: center;
     font-family: "Digitaltech-rm0K", cursive;
     font-size: clamp(2rem, 2vw, 2.5rem);
@@ -229,8 +234,7 @@ footer i {
 section {
     position: relative;
     left: 250px;
-    width: calc(100% - 250px); /* largeur sidebar */
-    margin: 1% 2%;
+    width: calc(100% - 430px); /* largeur sidebar */
     background-color: var(--body-color);
     transition: var(--tran-05);
 }

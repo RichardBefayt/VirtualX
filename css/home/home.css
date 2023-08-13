@@ -5,6 +5,7 @@
  
 /* Milieu de page */
 .home {
+    align-self: center;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: auto;
