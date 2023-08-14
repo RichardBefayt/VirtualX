@@ -74,18 +74,11 @@ body {
     min-height: 100vh;
 }
 
-/* logo : 
-} */
-
-/* header .header-link h3 {
-    
-} */
-/***** Sidebar *****/
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 225px;
     height: 100%;
     padding: 10px 14px;
     background-color: var(--sidebar-color);
@@ -233,15 +226,16 @@ footer i {
 
 section {
     position: relative;
-    left: 250px;
-    width: calc(100% - 430px); /* largeur sidebar */
+    left: 150px;
+    width: calc(100% - 27%); 
+    /* largeur sidebar */
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
 
 .sidebar.close ~ section {
-    left: 88px;
-    max-width: calc(100% - 88px); /* largeur fermeture sidebar */
+    left: 44px;
+    max-width: calc(100% - 44px); /* largeur fermeture sidebar */
 }
 
 button {
@@ -262,5 +256,4 @@ button:hover {
     text-shadow: 0 0 5px var(--second-color);
     color: var(--second-color);
 }
-
 
