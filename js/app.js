@@ -4,14 +4,28 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const sidebar = document.querySelector('.sidebar');
     const sidebarBtn = document.querySelector('.sidebar-button');
-    
+
     const navLogin = document.querySelector(".nav-login");
     const navUser = document.querySelector(".nav-user");
     const navLogout = document.querySelector(".nav-logout");
 
     sidebarBtn.addEventListener("click", () => {
         sidebar.classList.toggle("close");
+
+        // Gérer l'affichage des éléments de navigation lorsque la sidebar est ouverte ou fermée
+        const isSidebarClosed = sidebar.classList.contains("close");
+        toggleNavTextDisplay(isSidebarClosed);
     });
+
+    const toggleNavTextDisplay = (isSidebarClosed) => {
+        const navTextElements = document.querySelectorAll('.nav-link .text');
+        const footerTextElement = document.querySelector('.footer-link .footer-text');
+
+        for (const navTextElement of navTextElements) {
+            navTextElement.style.display = isSidebarClosed ? "none" : "block";
+            footerTextElement.style.display = isSidebarClosed ? "none" : "block";
+        }
+    };
     
     const toggleNavElements = (loggedIn) => {
         if (loggedIn) {
@@ -31,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Appel initial avec l'état de connexion
     toggleNavElements(userPseudo !== null);
+    toggleNavTextDisplay(sidebar.classList.contains("close"));
 
     navLogout.addEventListener("click", () => {
         const confirmLogout = confirm("Êtes-vous sûr de vouloir vous déconnecter ?");

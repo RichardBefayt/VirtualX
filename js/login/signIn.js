@@ -23,9 +23,9 @@ signInEyeIcon.addEventListener("click", () => {
 
 // Validation de l'email
 const signInEmailChecker = () => {
-    const signInEmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
 
-    if (!signInEmailInput.value.match(signInEmailRegex)) {
+    if (!signInEmailInput.value.match(emailRegex)) {
         return signInEmailField.classList.add("invalid");
     } else {
         signInEmailField.classList.remove("invalid");
