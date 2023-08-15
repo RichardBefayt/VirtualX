@@ -1,4 +1,5 @@
 .global-contact {
+    max-height: 100vh;
     color: var(--white);
     background: url(../../assets/images/contact/contact-bg.png) center/cover no-repeat;
 }
@@ -124,4 +125,57 @@
 
 .footer-links a p:hover {
     color: var(--second-color);
+}
+
+@media screen and (max-width: 680px) {
+    .contact-infos {
+        height: auto;
+    }
+
+    .contact-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contact-main {
+        flex-direction: column-reverse;
+        gap: 25px;
+        padding: 0 20px;
+    }
+
+    .main-left {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .main-left input {
+        width: 100%;
+        height: 35px;
+        padding: 0 15px;
+        border: 1px solid #d1d1d1;
+        outline: none;
+    }
+
+    .main-left form textarea {
+        height: 100px;
+    }
+
+    .main-left form button {
+        margin: 0 auto;
+    }
+
+    .right-box {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 15px;
+    }
+
+    .footer-links {
+        padding: 0 20px 20px;
+    }
+
+    .footer-links a p {
+        display: none;
+    }
 }

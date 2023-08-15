@@ -18,7 +18,7 @@ function displayProductCards(productsData) {
 
     productsContainer.textContent = "";
 
-    products.forEach((product, index) => {
+    products.forEach((product) => {
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
 
@@ -139,7 +139,7 @@ function addToCart(product) {
 }
 
 // Écouteur d'événement pour le menu déroulant de tri
-const sortMenu = document.getElementById("sort");
+const sortMenu = document.getElementById("sort-select");
 sortMenu.addEventListener("change", (event) => {
     const selectedSortOrder = event.target.value;
     
