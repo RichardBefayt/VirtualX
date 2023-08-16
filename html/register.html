@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>VirtualX/Connexion</title>
+    <title>VirtualX/Inscription</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,20 +100,35 @@
         </nav>
 
         <section class="login">
-
-            <div class="form-container sign-in">
-                <div class="form-img">
-                    <img src="../assets/images/login/login-1.png" alt="Image d'illustration pour le formulaire d'inscription">
-                </div>
-
-                <h3>Connexion</h3>
+            
+            <div class="form-container sign-up">
                 
-                <form id="sign-in-form" action="#" method="post">
+                <div class="form-img">
+                    <img src="../assets/images/login/login-2.png" alt="Image d'illustration pour le formulaire d'inscription">
+                </div>
+                
+                <h3>Inscription</h3>
 
-                    <div class="field sign-in-email-field">
-                        <label for="sign-in-email">Email :</label>
+<!-- richard -->
+<!-- richard@gmail.com -->
+<!-- Richard1234! -->
+                <form id="sign-up-form" action="#" method="post">
+
+                    <div class="field pseudo-field">
+                        <label for="pseudo">Pseudo :</label>
                         <div class="input-field">
-                            <input type="email" id="sign-in-email">
+                            <input type="text" id="pseudo">
+                        </div>
+                        <span class="error pseudo error">
+                            <i class='bx bx-error-circle error-icon'></i>
+                            <p class="error-message">Le pseudo doit être de 8 caractères minimum</p>
+                        </span>
+                    </div>
+        
+                    <div class="field sign-up-email-field">
+                        <label for="sign-up-email">Email :</label>
+                        <div class="input-field">
+                            <input type="email" id="sign-up-email">
                         </div>
                         <span class="error email error">
                             <i class='bx bx-error-circle error-icon'></i>
@@ -121,36 +136,46 @@
                         </span>
                     </div>
         
-                    <div class="field sign-in-password-field">
-                        <label for="sign-in-password">Mot de passe :</label>
+                    <div class="field sign-up-password-field">
+                        <label for="sign-up-password">Mot de passe :</label>
                         <div class="input-field">
-                            <input type="password" id="sign-in-password">
-                            <i class='bx bx-hide sign-in-show-hide'></i>
+                            <input type="password" id="sign-up-password">
+                            <i class='bx bx-hide sign-up-show-hide'></i>
                         </div>
                         <span class="error password error">
                             <i class='bx bx-error-circle error-icon'></i>
                             <p class="error-message">Le mot de passe doit avoir 8 caractères minimum, une majuscule, un chiffre et un caractère spécial</p>
                         </span>
                     </div>
-
+        
+                    <div class="field confirm-field">
+                        <label for="sign-up-confirm">Confirmer mot de passe :</label>
+                        <div class="input-field">
+                            <input type="password" id="sign-up-confirm">
+                            <i class='bx bx-hide sign-up-show-hide'></i>
+                        </div>
+                        <span class="error confirm error">
+                            <i class='bx bx-error-circle error-icon'></i>
+                            <p class="error-message">Les mots de passe ne correspondent pas</p>
+                        </span>
+                    </div>
+        
                     <div class="button">
                         <input type="submit" value="Valider"></input>
                     </div>
 
                     <div class="login-register">
-                        <p>Pas encore de compte ? <a href="./register.html" class="register-link">S'inscrire</a></p>
+                        <p>Déjà inscrit ? <a href="./login.html" class="login-link">Se connecter</a></p>
                     </div>
                 </form>
-                
+
             </div>
-            <!-- richard -->
-            <!-- richard@gmail.com -->
-            <!-- Richard1234! -->
+
         </section>
 
     </div>
 
     <script src="../js/app.js"></script>
-    <script src="../js/login/signIn.js"></script>
+    <script src="../js/login/signUp.js"></script>
 </body>
 </html>
