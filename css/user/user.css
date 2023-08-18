@@ -4,3 +4,138 @@
     color: var(--white);
     background: url(../../assets/images/user/user-bg.png) center/cover no-repeat;
 }
+
+.user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user h2 {
+    font-size: clamp(1.5rem, 2vw, 5rem);
+}
+
+.container {
+    width: 660px;
+    height: 300px;
+    margin-top: 30px;
+    -webkit-box-shadow: var(---webkit-box-shadow);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(7px);
+}
+
+.container-onglets {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    border-bottom: 1px solid var(--white);
+}
+
+.onglets {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: bold;
+}
+.onglets:not(:nth-child(3)) {
+    border-right: 1px solid var(--white);
+}
+
+.contenu {
+    display: none; /* Masquer tous les contenus par défaut */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    opacity: 0;
+}
+
+.active {
+    color: var(--black);
+    background-color: var(--second-color);
+}
+
+
+.active-contenu {
+    display: flex; /* Afficher le contenu actif */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fade 0.5s forwards;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.favorites-content {
+    width: 100%;
+    z-index: 10;
+}
+
+.favorites-content ul {
+    width: 100%;    
+}
+
+.favorites-content ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+    font-size: clamp(1.2rem, 1vw, 3rem);
+    line-height: 1.5em;
+}
+
+.favorites-content ul li .box-items {
+    flex: 0.8;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.favorites-content ul li .box-items img {
+    width: 70px;
+    height: 70px;
+    border: 1px solid var(--white);
+}
+
+.favorites-content ul li button {
+    cursor: pointer;
+    max-width: 10%;
+    font-size: clamp(1rem, 1vw, 1.2rem);
+}
+
+.favorites-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+    margin: 20px 10px;
+    padding: 30px;
+    font-size: clamp(1.2rem, 1vw, 1.7rem);
+}
+
+.favorites-footer button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorites-footer button i {
+    margin-right: 10%;
+}
+
+.favorites-footer button p {
+    font-size: clamp(8px, 0.7vw, 14px);
+}

@@ -8,8 +8,8 @@
     
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/user/user.css">
-    <link rel="icon" href="../../assets/images/logos/favicon.ico" />
     <link rel="stylesheet" href="../css/login/login.css">
+    <link rel="icon" href="../../assets/images/logos/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -101,7 +101,41 @@
         </nav>
 
         <section class="user">
+            <h2>Mon Compte</h2>
+            
+            <div class="container">
+                <div class="container-onglets">
+                    <!-- -anim : nom personnalisable -->
+                    <div class="onglets active" data-anim="1">Infos</div>
+                    <div class="onglets" data-anim="2">Favoris</div>
+                    <div class="onglets" data-anim="3">Commandes</div>
+                </div>
 
+                <div class="contenu active-contenu" data-anim="1">
+                    <!-- On récupère les infos de l'utilisateur -->
+                    <p class="user-pseudo">richard</p>
+                    <p class="user-email">richard@gmail.com</p>
+                </div>
+                
+                <div class="contenu" data-anim="2">
+                    <!-- On récupère la carte du produit -->
+                    <div class="favorites-content">
+                        <ul id="favorites"></ul>
+                    </div>
+                    <div class="favorites-footer">
+                        <button id="clear-button">
+                            <i class="fa-solid fa-trash"></i>
+                            <p>Tout supprimer</p>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="contenu" data-anim="3">
+                    <!-- On récupère les achats validés -->
+                    <p>Commandes</p>
+                </div>
+            </div>
+            
         </section>
 
     </div>

@@ -43,6 +43,9 @@ function displayProduct(productId) {
 
     const addToCartButton = document.getElementById("addToCartButton");
     addToCartButton.addEventListener("click", () => addToCart(productId));
+    
+    const addToFavoritesButton = document.getElementById("addToFavoritesButton");
+    addToFavoritesButton.addEventListener("click", () => addToFavorites(productId));
 }
 
 // Fonction pour ajouter un produit au panier en utilisant localStorage
@@ -64,6 +67,30 @@ function addToCart(productId) {
         alert('Produit ajouté au panier !');
     }
 }
+
+// Fonction pour ajouter un produit aux favoris en utilisant localStorage
+function addToFavorites(productId) {
+    const favoriteItems = JSON.parse(localStorage.getItem('favoriteItems')) || [];
+    const product = productData.vr.find(item => item.id === productId);
+
+    if (product) {
+        const existingProduct = favoriteItems.find(item => item.id === productId);
+
+        if (existingProduct) {
+            // Le produit existe déjà dans les favoris, mettez à jour la quantité
+            existingProduct.quantity = (existingProduct.quantity || 0) + 1;
+            alert('Ce produit est déjà dans vos favoris !');
+        } else {
+            // Ajoutez le produit aux favoris avec une quantité de 1
+            product.quantity = 1;
+            favoriteItems.push(product);
+            alert('Produit ajouté aux favoris !');
+        }
+
+        localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+    }
+}
+
 
 window.addEventListener('DOMContentLoaded', async () => {
     const productId = getProductIdFromURL();
