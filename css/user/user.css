@@ -46,7 +46,7 @@
 }
 
 .contenu {
-    display: none; /* Masquer tous les contenus par défaut */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -60,13 +60,13 @@
     background-color: var(--second-color);
 }
 
-
 .active-contenu {
-    display: flex; /* Afficher le contenu actif */
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     animation: fade 0.5s forwards;
+    overflow-y: scroll;
 }
 @keyframes fade {
     from {
