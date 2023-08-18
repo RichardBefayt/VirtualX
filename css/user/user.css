@@ -18,7 +18,7 @@
 
 .container {
     width: 660px;
-    height: 300px;
+    height: 400px;
     margin-top: 30px;
     -webkit-box-shadow: var(---webkit-box-shadow);
     box-shadow: var(--box-shadow);
@@ -28,7 +28,7 @@
 .container-onglets {
     display: flex;
     width: 100%;
-    height: 30%;
+    height: 20%;
     border-bottom: 1px solid var(--white);
 }
 
@@ -65,8 +65,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    animation: fade 0.5s forwards;
     overflow-y: scroll;
+    animation: fade 0.5s forwards;
 }
 @keyframes fade {
     from {
@@ -79,6 +79,7 @@
 
 .favorites-content {
     width: 100%;
+    margin-top: 20px;
     z-index: 10;
 }
 
@@ -90,7 +91,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 15px;
+    margin: 5px 15px;
     font-size: clamp(1.2rem, 1vw, 3rem);
     line-height: 1.5em;
 }

@@ -53,7 +53,6 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--second-color);
-    border-radius: 20px;
 }
 
 html {

@@ -61,22 +61,33 @@ function displayProductCards(productsData) {
         const cardIconsContainer = document.createElement("div");
         cardIconsContainer.classList.add("card-icons-container");
 
-        const favoriteIcon = document.createElement("i");
-        favoriteIcon.classList.add("card-icon", "fa-regular", "fa-bookmark", "favorite");
+        const addToFavoriteIcon = document.createElement("i");
+        addToFavoriteIcon.setAttribute("id", product.id);
+        addToFavoriteIcon.classList.add("card-icon", "fa-regular", "fa-bookmark", "favorite");
+
+        addToFavoriteIcon.addEventListener("click", (event) => {
+            // console.log("click :" + event.target.id);
+            const productId = event.target.getAttribute("data-id");
+            const selectedProduct = products.find(product => product.id === productId);
+            if (selectedProduct) {
+                addToFavorites(selectedProduct);
+            }
+        });
 
         const addToCartIcon = document.createElement("i");
         addToCartIcon.classList.add("card-icon", "fa-solid", "fa-cart-shopping", "add-to-cart");
         addToCartIcon.setAttribute("data-id", product.id);
 
-        addToCartIcon.addEventListener("click", (event) => {
-            const productId = event.target.getAttribute("data-id");
+        addToFavoriteIcon.addEventListener("click", (event) => {
+            // console.log("click :" + event.target.id);
+            const productId = event.target.id
             const selectedProduct = products.find(product => product.id === productId);
             if (selectedProduct) {
-                addToCart(selectedProduct);
+                addToFavorites(selectedProduct);
             }
         });
         
-        cardIconsContainer.appendChild(favoriteIcon);
+        cardIconsContainer.appendChild(addToFavoriteIcon);
         cardIconsContainer.appendChild(addToCartIcon);
         
         cardHeader.appendChild(cardTitle);
@@ -117,6 +128,28 @@ searchInput.addEventListener("input", (event) => {
     const filteredProducts = searchProducts(searchQuery);
     displayProductCards({ "vr": filteredProducts });
 });
+
+// Fonction pour ajouter un produit aux favoris en utilisant localStorage
+function addToFavorites(product) {
+    const favoriteItems = JSON.parse(localStorage.getItem('favoriteItems')) || [];
+    const existingProduct = favoriteItems.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        // Le produit existe déjà dans les favoris, mettez à jour la quantité
+        existingProduct.id = product.id;
+        alert('Ce produit est déjà dans vos favoris !');
+    } else {
+        favoriteItems.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            img: product.img,
+        });
+    }
+
+    localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+    alert('Produit ajouté aux favoris !');
+}
 
 // Fonction pour ajouter un produit au panier en utilisant localStorage
 function addToCart(product) {
