@@ -108,6 +108,8 @@ function displayCartItems() {
         const listItemBox = document.createElement('div');
         listItemBox.classList.add("box-items");
 
+        // Rajouter l'image ici
+
         const listItemSpanName = document.createElement('span');
         listItemSpanName.classList.add("span-name");
 
