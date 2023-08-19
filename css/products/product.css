@@ -38,7 +38,7 @@
 
 .product-bg {
     position: absolute;
-    left: 10%;
+    left: 5%;
     bottom: 0;
 }
 
@@ -139,5 +139,15 @@
     .product-buttons {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .product-bg {
+        left: -100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .product-bg {
+        left: -150px;
     }
 }

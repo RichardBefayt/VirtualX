@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarBtn.addEventListener("click", () => {
         sidebar.classList.toggle("close");
 
-        // Gérer l'affichage des éléments de navigation lorsque la sidebar est ouverte ou fermée
+        // Gère l'affichage des éléments de navigation lorsque la sidebar est ouverte ou fermée
         const isSidebarClosed = sidebar.classList.contains("close");
         toggleNavTextDisplay(isSidebarClosed);
     });
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // ***** Redirection ***** //
-    // Lire l'état de connexion depuis le localStorage
+    // Lit l'état de connexion depuis le localStorage
     const userPseudo = localStorage.getItem("userPseudo");
     
     // Appel initial avec l'état de connexion
@@ -51,13 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const confirmLogout = confirm("Êtes-vous sûr de vouloir vous déconnecter ?");
 
         if (confirmLogout) {
-            // Supprimer l'état de connexion du localStorage
+            // Supprime l'état de connexion du localStorage
             localStorage.removeItem("userPseudo");
             
-            // Mettre à jour l'affichage de la navigation
+            // Met à jour l'affichage de la navigation
             toggleNavElements(false);
 
-            // Rediriger l'utilisateur vers la page d'accueil ou une autre page appropriée
+            // Redirige l'utilisateur vers la page d'accueil ou une autre page appropriée
             window.location.href = "home.html";
         }
     });

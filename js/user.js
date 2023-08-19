@@ -1,30 +1,24 @@
-// Inclure la balise `<hr>` après chaque favoris et commande
-
-const onglets = document.querySelectorAll(".onglets"); // Renvoie un tableau avec tous les onglets
-const contenus = document.querySelectorAll(".contenu"); // Renvoie un tableau avec tous les contenus
+const onglets = document.querySelectorAll(".onglets");
+const contenus = document.querySelectorAll(".contenu");
 
 let index = 0;
 
 onglets.forEach(onglet => {
     onglet.addEventListener("click", () => {
         if(onglet.classList.contains("active")) {
-            // Si l'onglet contient la classe "active", on ne fait rien
             return;
         } else {
             onglet.classList.add("active");
         }
 
         index = onglet.getAttribute("data-anim");
-        // console.log("index :", index);
 
-        // Permet de retirer la classe "active" des autres onglets sur lesquels nous ne sommes pas (!= index)
         for(i = 0; i < onglets.length; i++) {
             if(onglets[i].getAttribute("data-anim") != index) {
                 onglets[i].classList.remove("active");
             }
         }
 
-        // Permet d'afficher les contenus correspondants à l'onglet affiché
         for(j = 0; j < contenus.length; j++) {
             if(contenus[j].getAttribute("data-anim") == index) {
                 contenus[j].classList.add("active-contenu");
@@ -84,7 +78,7 @@ function displayFavoriteItems() {
 
     const favoriteItems = getFavoriteItems();
 
-    productsList.textContent = ''; // Efface la liste des produits des favoris
+    productsList.textContent = '';
 
     favoriteItems.forEach(item => {
         const listItem = document.createElement('li');
@@ -92,11 +86,10 @@ function displayFavoriteItems() {
         const listItemBox = document.createElement('div');
         listItemBox.classList.add("box-items");
 
-        // Ajouter la balise <img> pour l'image du produit
         const productImg = document.createElement('img');
-        productImg.src = item.img; // Mettre à jour l'attribut src avec l'URL de l'image du produit
+        productImg.src = item.img;
         productImg.alt = item.name;
-        productImg.classList.add('product-image'); // Ajouter une classe pour le style CSS
+        productImg.classList.add('product-image');
 
         const listItemSpanName = document.createElement('span');
         listItemSpanName.classList.add("span-name");
@@ -104,7 +97,7 @@ function displayFavoriteItems() {
         const listItemSpanPrice = document.createElement('span');
         listItemSpanPrice.classList.add("span-price");
         
-        const productPrice = parseFloat(item.price).toFixed(2); // S'assure que le prix est bien un nombre
+        const productPrice = parseFloat(item.price).toFixed(2);
 
         // Affichage du produit, prix à l'unité, quantité
         listItemSpanName.textContent = `${item.name}`;
@@ -116,7 +109,7 @@ function displayFavoriteItems() {
 
         listItem.appendChild(listItemBox);
 
-        // Bouton "Supprimer" pour retirer complètement le produit du panier
+        // Bouton "Supprimer" pour retirer le produit des favoris
         const deleteButton = document.createElement('button');
         const icon = document.createElement('i');
         icon.className = 'fa-solid fa-ban';
@@ -135,7 +128,7 @@ function displayFavoriteItems() {
 window.addEventListener('DOMContentLoaded', () => {
     displayFavoriteItems();
 
-    // Bouton "Vider le panier" pour réinitialiser le panier à zéro
+    // Bouton "Tout supprimer" pour réinitialiser les favoris à zéro
     const clearButton = document.getElementById('clear-button');
     clearButton.addEventListener('click', clearFavorites);
 });

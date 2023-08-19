@@ -135,6 +135,7 @@ header .header-container .header-title {
 }
 
 header .sidebar-button {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -12,6 +12,40 @@ async function getAllProductData() {
     }
 }
 
+// Fonction pour ajouter les icônes d'ajout aux favoris et d'ajout au panier
+function addIconsToProductCard(productCard, product) {
+    const cardIconsContainer = document.createElement("div");
+    cardIconsContainer.classList.add("card-icons-container");
+
+    const addToFavoriteIcon = document.createElement("i");
+    addToFavoriteIcon.setAttribute("data-id", product.id);
+    addToFavoriteIcon.classList.add("card-icon", "fa-regular", "fa-bookmark", "favorite");
+    addToFavoriteIcon.addEventListener("click", (event) => {
+        const productId = event.currentTarget.getAttribute("data-id"); // Utiliser event.currentTarget
+        const selectedProduct = productsData.vr.find(product => product.id === productId);
+        if (selectedProduct) {
+            addToFavorites(selectedProduct);
+        }
+    });
+
+    const addToCartIcon = document.createElement("i");
+    addToCartIcon.classList.add("card-icon", "fa-solid", "fa-cart-shopping", "add-to-cart");
+    addToCartIcon.setAttribute("data-id", product.id);
+    addToCartIcon.addEventListener("click", (event) => {
+        const productId = event.target.getAttribute("data-id");
+        const selectedProduct = productsData.vr.find(product => product.id === productId);
+        if (selectedProduct) {
+            addToCart(selectedProduct);
+        }
+    });
+
+    cardIconsContainer.appendChild(addToFavoriteIcon);
+    cardIconsContainer.appendChild(addToCartIcon);
+    
+    return cardIconsContainer;
+}
+
+
 // Affiche les cartes de produits
 function displayProductCards(productsData) {
     const products = productsData.vr;
@@ -58,37 +92,8 @@ function displayProductCards(productsData) {
         cardPrice.classList.add("card-price");
         cardPrice.textContent = product.price + " €";
 
-        const cardIconsContainer = document.createElement("div");
-        cardIconsContainer.classList.add("card-icons-container");
-
-        const addToFavoriteIcon = document.createElement("i");
-        addToFavoriteIcon.setAttribute("id", product.id);
-        addToFavoriteIcon.classList.add("card-icon", "fa-regular", "fa-bookmark", "favorite");
-
-        addToFavoriteIcon.addEventListener("click", (event) => {
-            // console.log("click :" + event.target.id);
-            const productId = event.target.getAttribute("data-id");
-            const selectedProduct = products.find(product => product.id === productId);
-            if (selectedProduct) {
-                addToFavorites(selectedProduct);
-            }
-        });
-
-        const addToCartIcon = document.createElement("i");
-        addToCartIcon.classList.add("card-icon", "fa-solid", "fa-cart-shopping", "add-to-cart");
-        addToCartIcon.setAttribute("data-id", product.id);
-
-        addToFavoriteIcon.addEventListener("click", (event) => {
-            // console.log("click :" + event.target.id);
-            const productId = event.target.id
-            const selectedProduct = products.find(product => product.id === productId);
-            if (selectedProduct) {
-                addToFavorites(selectedProduct);
-            }
-        });
-        
-        cardIconsContainer.appendChild(addToFavoriteIcon);
-        cardIconsContainer.appendChild(addToCartIcon);
+        const cardIconsContainer = addIconsToProductCard(productCard, product, products);
+        cardFooter.appendChild(cardIconsContainer);
         
         cardHeader.appendChild(cardTitle);
         cardImgContainer.appendChild(cardImg);
@@ -101,7 +106,7 @@ function displayProductCards(productsData) {
         productCardInner.appendChild(cardHeader);
         productCardInner.appendChild(cardMiddle);
         productCardInner.appendChild(cardFooter);
-        
+
         productCard.appendChild(productCardInner);
 
         productsContainer.appendChild(productCard);
@@ -110,11 +115,11 @@ function displayProductCards(productsData) {
 
 // Fonction de recherche des produits par nom
 function searchProducts(query) {
-    if (!productsData) return []; // Vérifie si les données des produits sont disponibles
+    if (!productsData) return [];
 
     const products = productsData.vr;
 
-    if (!query) return products; // Si la recherche est vide, renvoyer tous les produits
+    if (!query) return products;
 
     query = query.toLowerCase();
     
@@ -145,10 +150,10 @@ function addToFavorites(product) {
             price: product.price,
             img: product.img,
         });
+        
+        localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+        alert('Produit ajouté aux favoris !');
     }
-
-    localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
-    alert('Produit ajouté aux favoris !');
 }
 
 // Fonction pour ajouter un produit au panier en utilisant localStorage

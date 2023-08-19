@@ -27,6 +27,7 @@
     justify-content: space-between;
     align-items: center;
     min-width: 75%;
+    max-width: 40%;
     height: 500px;
     border: 1px solid white;
     -webkit-box-shadow: var(---webkit-box-shadow);
@@ -109,6 +110,17 @@
 }
 
 @media screen and (max-width: 739px) {
+    .cart-content ul li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cart-content ul li .box-items {
+        flex-direction: row;
+    }
+    
     .cart-content ul li button {
         padding: 10px;
     }
