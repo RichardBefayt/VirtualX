@@ -13,7 +13,7 @@
 }
 
 .user h2 {
-    font-size: clamp(1.5rem, 2vw, 5rem);
+    font-size: clamp(3rem, 2vw, 5rem);
 }
 
 .container {
@@ -91,7 +91,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 15px;
+    margin: 5px auto;
     font-size: clamp(1.2rem, 1vw, 3rem);
     line-height: 1.5em;
 }
@@ -109,8 +109,17 @@
     border: 1px solid var(--white);
 }
 
+.favorites-content ul li .box-items .span-price {
+    padding: 0 2px;
+    color: var(--black);
+    background-color: var(--second-color);
+}
+
 .favorites-content ul li button {
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 10%;
     font-size: clamp(1rem, 1vw, 1.2rem);
 }
@@ -139,4 +148,31 @@
 
 .favorites-footer button p {
     font-size: clamp(8px, 0.7vw, 14px);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: auto;
+        min-width: 250px;
+    }
+
+    .container-onglets {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .onglets {
+        width: 100%;
+        padding: 2px 0;
+    }
+
+    .favorites-content ul li {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .favorites-content ul li .box-items {
+        flex: 1;
+        margin-left: 7px;
+    }
 }
