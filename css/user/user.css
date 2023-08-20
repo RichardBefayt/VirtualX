@@ -89,7 +89,7 @@
 
 .favorites-content ul li {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 5px auto;
     font-size: clamp(1.2rem, 1vw, 3rem);
@@ -99,7 +99,7 @@
 .favorites-content ul li .box-items {
     flex: 0.8;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
@@ -109,8 +109,13 @@
     border: 1px solid var(--white);
 }
 
-.favorites-content ul li .box-items .span-price {
+.favorites-content ul li .box-items span {
+    width: 50%;
     padding: 0 2px;
+    text-align: center;
+}
+
+.favorites-content ul li .box-items .span-price {
     color: var(--black);
     background-color: var(--second-color);
 }

@@ -168,6 +168,7 @@ function addToCart(product) {
             id: product.id,
             name: product.name,
             price: product.price,
+            img: product.img,
             quantity: 1
         });
     }

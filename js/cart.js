@@ -14,6 +14,7 @@ function addToCart(product) {
             id: product.id,
             name: product.name,
             price: product.price,
+            img: product.img,
             quantity: 1
         });
     }
@@ -86,6 +87,9 @@ function displayEmptyCartMessage() {
     productsList.appendChild(emptyCartMessage);
 
     totalAmountElement.textContent = '0.00';
+
+    const cartContainer = document.querySelector('.cart-container');
+    cartContainer.classList.add('with-filter');
 }
 
 // Fonction pour afficher les produits du panier avec les boutons pour augmenter/diminuer la quantité
@@ -98,6 +102,9 @@ function displayCartItems() {
     if (cartItems.length === 0) {
         displayEmptyCartMessage();
         return;
+    } else {
+        const cartContainer = document.querySelector('.cart-container');
+        cartContainer.classList.add('with-filter');
     }
 
     productsList.textContent = ''; // Efface la liste des produits du panier
@@ -108,7 +115,13 @@ function displayCartItems() {
         const listItemBox = document.createElement('div');
         listItemBox.classList.add("box-items");
 
-        // Rajouter l'image ici
+        const listImgBox = document.createElement('div');
+        listImgBox.classList.add("box-img");
+
+        const listImg = document.createElement('img');
+        listImg.classList.add("img-list");
+        listImg.src = item.img;
+        listImg.alt = item.name;
 
         const listItemSpanName = document.createElement('span');
         listItemSpanName.classList.add("span-name");
@@ -119,22 +132,26 @@ function displayCartItems() {
         const listItemSpanQuantity = document.createElement('span');
         listItemSpanQuantity.classList.add("span-quantity");
         
-        const productPrice = parseFloat(item.price).toFixed(2); // S'assure que le prix est bien un nombre
-        const totalPrice = (item.price * (item.quantity || 1)).toFixed(2);
+        const productPrice = parseFloat(item.price).toFixed(0); // S'assure que le prix est bien un nombre
+        const totalPrice = (item.price * (item.quantity || 1)).toFixed(0);
 
         // Affichage du produit, prix à l'unité, quantité
         listItemSpanName.textContent = `${item.name}`;
         listItemSpanPrice.textContent = `${productPrice} €`;
-        listItemSpanQuantity.textContent = `${item.quantity || 1}`;
+        listItemSpanQuantity.textContent = `Qté: ${item.quantity || 1}`;
+
+        listImgBox.appendChild(listImg);
 
         listItemBox.appendChild(listItemSpanName);
         listItemBox.appendChild(listItemSpanPrice);
         listItemBox.appendChild(listItemSpanQuantity);
 
+        listItem.appendChild(listImgBox);
         listItem.appendChild(listItemBox);
 
         // Affichage du prix total pour ce produit (prix * quantité)
         const totalPriceText = document.createElement('span');
+        totalPriceText.classList.add('total-price');
         totalPriceText.textContent = `Total: ${totalPrice} €`;
         listItem.appendChild(totalPriceText);
 
@@ -144,8 +161,11 @@ function displayCartItems() {
         plusButton.addEventListener('click', () => {
             increaseQuantity(item.id);
             totalAmount += parseFloat(item.price);
-            totalAmountElement.textContent = totalAmount.toFixed(2);
+            totalAmountElement.textContent = totalAmount.toFixed(0);
         });
+
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.classList.add('buttons-container');
 
         // Bouton "-" pour diminuer la quantité
         const minusButton = document.createElement('button');
@@ -153,7 +173,7 @@ function displayCartItems() {
         minusButton.addEventListener('click', () => {
             decreaseQuantity(item.id);
             totalAmount -= parseFloat(item.price);
-            totalAmountElement.textContent = totalAmount.toFixed(2);
+            totalAmountElement.textContent = totalAmount.toFixed(0);
         });
 
         // Bouton "Supprimer" pour retirer complètement le produit du panier
@@ -164,20 +184,21 @@ function displayCartItems() {
 
         deleteButton.addEventListener('click', () => {
             totalAmount -= parseFloat(totalPrice);
-            totalAmountElement.textContent = totalAmount.toFixed(2);
+            totalAmountElement.textContent = totalAmount.toFixed(0);
             deleteItem(item.id);
         });
 
-        listItem.appendChild(plusButton);
-        listItem.appendChild(minusButton);
-        listItem.appendChild(deleteButton);
+        buttonsContainer.appendChild(plusButton);
+        buttonsContainer.appendChild(minusButton);
+        buttonsContainer.appendChild(deleteButton);
+        listItem.appendChild(buttonsContainer);
 
         productsList.appendChild(listItem);
 
         totalAmount += parseFloat(totalPrice);
     });
 
-    totalAmountElement.textContent = totalAmount.toFixed(2);
+    totalAmountElement.textContent = totalAmount.toFixed(0);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
