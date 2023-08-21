@@ -1,6 +1,0 @@
-.global-404 {
-    width: 100vw;
-    max-width: 100vw;
-    color: var(--white);
-    background: url(../../assets/images/404/404-bg.png) center/cover no-repeat;
-}

@@ -142,7 +142,8 @@ function addToFavorites(product) {
     if (existingProduct) {
         // Le produit existe déjà dans les favoris, mettez à jour la quantité
         existingProduct.id = product.id;
-        alert('Ce produit est déjà dans vos favoris !');
+        addToFavoriteFailModal();
+        // alert('Ce produit est déjà dans vos favoris !');
     } else {
         favoriteItems.push({
             id: product.id,
@@ -152,7 +153,8 @@ function addToFavorites(product) {
         });
         
         localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
-        alert('Produit ajouté aux favoris !');
+        addToFavoriteSuccessModal();
+        // alert('Produit ajouté aux favoris !');
     }
 }
 
@@ -174,8 +176,35 @@ function addToCart(product) {
     }
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    alert('Produit ajouté au panier !');
+    addToCartModal();
+    // alert('Produit ajouté au panier !');
 }
+
+// Modales
+function addToFavoriteFailModal() {
+    document.getElementById('fail-favorite-modal').style.display = 'block';
+}
+
+function addToFavoriteSuccessModal() {
+    document.getElementById('success-favorite-modal').style.display = 'block';
+}
+
+function addToCartModal() {
+    document.getElementById('add-cart-modal').style.display = 'block';
+}
+
+// Fonction pour ajouter un écouteur d'événement de fermeture à tous les boutons de fermeture des modales
+function addCloseModalEventListeners() {
+    const closeModals = document.querySelectorAll('.close-modal');
+    closeModals.forEach(closeModal => {
+        closeModal.addEventListener('click', function() {
+            closeModal.parentElement.parentElement.style.display = 'none';
+        });
+    });
+}
+
+// Ajoute des écouteurs d'événements de fermeture aux boutons de fermeture des modales
+addCloseModalEventListeners();
 
 // Écouteur d'événement pour le menu déroulant de tri
 const sortMenu = document.getElementById("sort-select");
