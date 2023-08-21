@@ -290,35 +290,36 @@ button:hover {
 }
 
 @media screen and (max-width: 640px) {
-    .sidebar {
-        width: 88px;
-    }
-
     .sidebar.close {
         width: 0;
     }
 
+    .sidebar .icon,
     .sidebar .text {
-        opacity: 0;
+        display: block;
+        /* opacity: 1; */
     }
 
+    .sidebar.close .icon,
     .sidebar.close .text {
-        opacity: 1;
+        display: none;
+        /* opacity: 0; */
     }
 
     .sidebar header .sidebar-button {
-        transform: translateY(-50%) rotate(0deg);
+        top: 160%;
+        transform: translateY(-50%) rotate(180deg);
     }
 
     .sidebar.close header .sidebar-button {
-        transform: translateY(-50%);
+        transform: translateY(-50%) rotate(0deg);
     }
 
     section {
         left: 44px;
-        max-width: calc(100% - 44px);
+        max-width: 100%;
     }
-
+    
     .sidebar.close ~ section {
         left: 0;
         max-width: 100%;
