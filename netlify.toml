@@ -35,5 +35,5 @@
 
 [[redirects]]
     from = "/*"
-    to = "/html/404.html"
+    to = "/html/no-found.html"
     status = 404

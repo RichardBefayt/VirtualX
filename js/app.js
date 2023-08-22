@@ -48,17 +48,35 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleNavTextDisplay(sidebar.classList.contains("close"));
 
     navLogout.addEventListener("click", () => {
-        const confirmLogout = confirm("Êtes-vous sûr de vouloir vous déconnecter ?");
-
+        displayModal();
+    
+        const confirmLogout = document.querySelector(".confirm-logout");
+    
         if (confirmLogout) {
             // Supprime l'état de connexion du localStorage
             localStorage.removeItem("userPseudo");
             
             // Met à jour l'affichage de la navigation
             toggleNavElements(false);
-
+            
             // Redirige l'utilisateur vers la page d'accueil ou une autre page appropriée
             window.location.href = "home.html";
+            closeModal(); // Ferme la modal après la déconnexion
         }
-    });
+    });    
 });
+
+function displayModal() {
+    const logoutModal = document.getElementById("logout-modal");
+    logoutModal.style.display = 'block';
+
+    // Ajoute l'événement de clic pour fermer la modal lorsque le bouton "Annuler" est cliqué
+    const closeModalButton = document.querySelector('.close-modal');
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', closeModal);
+    }
+}
+
+function closeModal() {
+    document.getElementById('logout-modal').style.display = 'none';
+}
