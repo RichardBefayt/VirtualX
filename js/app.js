@@ -47,23 +47,26 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleNavElements(userPseudo !== null);
     toggleNavTextDisplay(sidebar.classList.contains("close"));
 
-    navLogout.addEventListener("click", () => {
+    navLogout.addEventListener("click", (event) => {
+        event.preventDefault();
         displayModal();
-    
+        
         const confirmLogout = document.querySelector(".confirm-logout");
     
         if (confirmLogout) {
-            // Supprime l'état de connexion du localStorage
-            localStorage.removeItem("userPseudo");
-            
-            // Met à jour l'affichage de la navigation
-            toggleNavElements(false);
-            
-            // Redirige l'utilisateur vers la page d'accueil ou une autre page appropriée
-            window.location.href = "home.html";
-            closeModal(); // Ferme la modal après la déconnexion
+            confirmLogout.addEventListener("click", () => {
+                // Supprime l'état de connexion du localStorage
+                localStorage.removeItem("userPseudo");
+    
+                // Met à jour l'affichage de la navigation
+                toggleNavElements(false);
+    
+                // Redirige l'utilisateur vers la page d'accueil ou une autre page appropriée
+                window.location.href = "home.html";
+                cancelModal(); // Ferme la modal après la déconnexion
+            });
         }
-    });    
+    });  
 });
 
 function displayModal() {
@@ -71,12 +74,12 @@ function displayModal() {
     logoutModal.style.display = 'block';
 
     // Ajoute l'événement de clic pour fermer la modal lorsque le bouton "Annuler" est cliqué
-    const closeModalButton = document.querySelector('.close-modal');
-    if (closeModalButton) {
-        closeModalButton.addEventListener('click', closeModal);
+    const cancelModalButton = document.querySelector('.cancel-modal');
+    if (cancelModalButton) {
+        cancelModalButton.addEventListener('click', cancelModal);
     }
 }
 
-function closeModal() {
+function cancelModal() {
     document.getElementById('logout-modal').style.display = 'none';
 }
