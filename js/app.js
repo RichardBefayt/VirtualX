@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Sauvegarde la page précédente dans le localStorage
-    localStorage.setItem("previousPage", document.referrer);
-    
+    // Sauvegarde la page précédente dans le localStorage, sauf si c'est une page à exclure
+    const excludedPages = ["login.html", "register.html"];
+    const previousPage = document.referrer;
+
+    if (!excludedPages.includes(previousPage)) {
+        localStorage.setItem("previousPage", previousPage);
+    }
+
     const sidebar = document.querySelector('.sidebar');
     const sidebarBtn = document.querySelector('.sidebar-button');
 
@@ -68,6 +73,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });  
 });
+
+// Fonction pour désactiver les liens vers les pages de connexion et d'inscription
+function disableLoginPageAndRegisterPage() {
+    const loginLinks = document.querySelectorAll('.nav-login');
+    const registerLinks = document.querySelectorAll('.nav-register');
+
+    loginLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            // Peut afficher un message d'erreur ou rediriger vers une autre page
+        });
+    });
+
+    registerLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            // Peut afficher un message d'erreur ou rediriger vers une autre page
+        });
+    });
+}
 
 function displayModal() {
     const logoutModal = document.getElementById("logout-modal");

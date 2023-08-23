@@ -84,7 +84,8 @@ signInForm.addEventListener("submit", (event) => {
                 signInInput.value = "";
             });
 
-            alert("Connexion réussie !");
+            successLoginModal();
+            // alert("Connexion réussie !");
 
             // Redirige l'utilisateur vers la page précédente ou la page d'accueil après la connexion réussie
             const previousPage = localStorage.getItem("previousPage");
@@ -95,9 +96,37 @@ signInForm.addEventListener("submit", (event) => {
             }
         } else {
             // Si les informations de connexion sont incorrectes
-            alert("Email ou mot de passe incorrect");
+            failLoginModal();
+            // alert("Email ou mot de passe incorrect");
         }
     } else {
-        alert("Veuillez remplir tous les champs");
+        emptyLoginModal();
+        // alert("Veuillez remplir tous les champs");
     }
 });
+
+// Modales
+function successLoginModal() {
+    document.getElementById('success-login-modal').style.display = 'block';
+}
+
+function failLoginModal() {
+    document.getElementById('fail-login-modal').style.display = 'block';
+}
+
+function emptyLoginModal() {
+    document.getElementById('empty-login-modal').style.display = 'block';
+}
+
+// Fonction pour ajouter un écouteur d'événement de fermeture à tous les boutons de fermeture des modales
+function addCloseModalEventListeners() {
+    const closeModals = document.querySelectorAll('.close-modal');
+    closeModals.forEach(closeModal => {
+        closeModal.addEventListener('click', function() {
+            closeModal.parentElement.parentElement.style.display = 'none';
+        });
+    });
+}
+
+// Ajoute des écouteurs d'événements de fermeture aux boutons de fermeture des modales
+addCloseModalEventListeners();

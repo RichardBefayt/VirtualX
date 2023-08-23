@@ -25,12 +25,6 @@ const pseudoChecker = () => {
     } else {
         pseudoField.classList.remove("invalid");
         localStorage.setItem("userPseudo", pseudoInput.value);
-
-        // Redirection vers la page précédente après validation réussie
-        const previousPage = localStorage.getItem("previousPage");
-        if (previousPage) {
-            window.location.href = previousPage;
-        }
     }
 };
 
@@ -93,7 +87,8 @@ signUpForm.addEventListener("submit", (event) => {
     // Vérifie si l'utilisateur a déjà un compte
     const storedPseudo = localStorage.getItem("storedPseudo");
     if (storedPseudo && storedPseudo === pseudoInput.value.trim()) {
-        alert("Vous avez déjà un compte. Veuillez vous connecter.");
+        existRegisterModal();
+        // alert("Vous avez déjà un compte. Veuillez vous connecter.");
         return;
     }
 
@@ -129,9 +124,37 @@ signUpForm.addEventListener("submit", (event) => {
             signUpInput.value = "";
         });
 
-        alert("Inscription validée !");
+        successRegisterModal();
+        // alert("Inscription validée !");
 
     } else {
-        alert("Veuillez remplir tous les champs");
+        emptyRegisterModal();
+        // alert("Veuillez remplir tous les champs");
     }
 });
+
+// Modales
+// Fonction pour afficher la modale de succès avec délai
+function successRegisterModal() {
+    const modal = document.getElementById('success-register-modal');
+    modal.style.display = 'block';
+}
+
+function emptyRegisterModal() {
+    document.getElementById('empty-register-modal').style.display = 'block';
+}
+
+function existRegisterModal() {
+    document.getElementById('exist-register-modal').style.display = 'block';
+}
+
+function addCloseModalEventListeners() {
+    const closeModals = document.querySelectorAll('.close-modal');
+    closeModals.forEach(closeModal => {
+        closeModal.addEventListener('click', function() {
+            closeModal.parentElement.parentElement.style.display = 'none';
+        });
+    });
+}
+
+addCloseModalEventListeners();
