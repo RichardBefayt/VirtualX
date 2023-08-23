@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Sauvegarde la page précédente dans le localStorage, sauf si c'est une page à exclure
-    const excludedPages = ["login.html", "register.html"];
     const previousPage = document.referrer;
 
-    if (!excludedPages.includes(previousPage)) {
+    if (previousPage) {
         localStorage.setItem("previousPage", previousPage);
     }
 

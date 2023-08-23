@@ -74,40 +74,64 @@ signInForm.addEventListener("submit", (event) => {
         const email = signInEmailInput.value.trim();
         const password = signInPassInput.value.trim();
 
-        if (checkLoginCredentials(email, password)) {
-            // Si les informations de connexion sont correctes
-            const storedPseudo = localStorage.getItem("storedPseudo");
-            localStorage.setItem("userPseudo", storedPseudo);
+        let loginStatus = "empty"; // Par défaut, aucun champ n'est rempli
 
-            // Vide les inputs après validation
-            signInInputs.forEach((signInInput) => {
-                signInInput.value = "";
-            });
-
-            successLoginModal();
-            // alert("Connexion réussie !");
-
-            // Redirige l'utilisateur vers la page précédente ou la page d'accueil après la connexion réussie
-            const previousPage = localStorage.getItem("previousPage");
-            if (previousPage) {
-                window.location.href = previousPage;
-            } else {
-                window.location.href = "home.html";
-            }
+        if (email === "" || password === "") {
+            loginStatus = "empty"; // Les champs sont vides
         } else {
-            // Si les informations de connexion sont incorrectes
-            failLoginModal();
-            // alert("Email ou mot de passe incorrect");
+            // Vérification des informations de connexion
+            const storedEmail = localStorage.getItem("storedEmail");
+            const storedPassword = localStorage.getItem("storedPassword");
+            
+            if (email === storedEmail && password === storedPassword) {
+                loginStatus = "success"; // Connexion réussie
+            } else {
+                loginStatus = "fail"; // Échec de la connexion
+            }
         }
-    } else {
-        emptyLoginModal();
-        // alert("Veuillez remplir tous les champs");
+
+        // Gestion des modales en utilisant un switch
+        switch (loginStatus) {
+            case "empty":
+                emptyLoginModal(false); // "Veuillez remplir tous les champs", ne redirige pas
+                break;
+            case "success":
+                const storedPseudo = localStorage.getItem("storedPseudo");
+                localStorage.setItem("userPseudo", storedPseudo);
+                signInInputs.forEach((signInInput) => {
+                    signInInput.value = "";
+                });
+                successLoginModal(true); // "Connexion réussie !", redirige
+                break;
+            case "fail":
+                failLoginModal(); // "Email ou mot de passe incorrect", ne redirige pas
+                break;
+        }
     }
 });
 
+function redirectToHome() {
+    window.location.href = "home.html";
+}
+
 // Modales
-function successLoginModal() {
-    document.getElementById('success-login-modal').style.display = 'block';
+function successLoginModal(shouldRedirect) {
+    const successModal = document.getElementById('success-login-modal');
+    successModal.style.display = 'block';
+
+    if (shouldRedirect) {
+        // Rediriger après un délai de 10 secondes
+        const timeoutId = setTimeout(function() {
+            redirectToHome();
+        }, 10000);
+
+        // Ajouter un événement de fermeture pour rediriger immédiatement si l'utilisateur ferme la modale
+        const closeModalButton = successModal.querySelector('.close-modal');
+        closeModalButton.addEventListener('click', function() {
+            clearTimeout(timeoutId); // Annuler le délai
+            redirectToHome(); // Rediriger immédiatement
+        });
+    }
 }
 
 function failLoginModal() {
@@ -118,15 +142,15 @@ function emptyLoginModal() {
     document.getElementById('empty-login-modal').style.display = 'block';
 }
 
-// Fonction pour ajouter un écouteur d'événement de fermeture à tous les boutons de fermeture des modales
-function addCloseModalEventListeners() {
-    const closeModals = document.querySelectorAll('.close-modal');
-    closeModals.forEach(closeModal => {
-        closeModal.addEventListener('click', function() {
-            closeModal.parentElement.parentElement.style.display = 'none';
-        });
+// Ajoute des écouteurs d'événements de fermeture aux boutons de fermeture des modales
+document.querySelectorAll('.close-modal').forEach(closeModalButton => {
+    closeModalButton.addEventListener('click', closeModals);
+});
+
+// Fonction pour fermer toutes les modales
+function closeModals() {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        modal.style.display = 'none';
     });
 }
-
-// Ajoute des écouteurs d'événements de fermeture aux boutons de fermeture des modales
-addCloseModalEventListeners();

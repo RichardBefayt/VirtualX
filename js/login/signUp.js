@@ -87,8 +87,7 @@ signUpForm.addEventListener("submit", (event) => {
     // Vérifie si l'utilisateur a déjà un compte
     const storedPseudo = localStorage.getItem("storedPseudo");
     if (storedPseudo && storedPseudo === pseudoInput.value.trim()) {
-        existRegisterModal();
-        // alert("Vous avez déjà un compte. Veuillez vous connecter.");
+        existRegisterModal(); // "Vous avez déjà un compte. Veuillez vous connecter.");
         return;
     }
 
@@ -124,12 +123,10 @@ signUpForm.addEventListener("submit", (event) => {
             signUpInput.value = "";
         });
 
-        successRegisterModal();
-        // alert("Inscription validée !");
+        successRegisterModal(); //"Inscription validée !"
 
     } else {
-        emptyRegisterModal();
-        // alert("Veuillez remplir tous les champs");
+        emptyRegisterModal(); // "Veuillez remplir tous les champs"
     }
 });
 
@@ -152,7 +149,12 @@ function addCloseModalEventListeners() {
     const closeModals = document.querySelectorAll('.close-modal');
     closeModals.forEach(closeModal => {
         closeModal.addEventListener('click', function() {
-            closeModal.parentElement.parentElement.style.display = 'none';
+            const modal = closeModal.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+                // Redirige vers la page d'accueil
+                window.location.href = "home.html"; // Remplacez "home.html" par le chemin de votre page d'accueil
+            }
         });
     });
 }
