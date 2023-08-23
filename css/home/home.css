@@ -167,6 +167,10 @@
     box-shadow: var(--box-shadow);
 }
 
+.home-right .home-right-img .img-tablet {
+    display: none;
+}
+
 .home-down {
     grid-area: 4 / 1 / 6 / 3;
     display: flex;
@@ -252,6 +256,23 @@
     width: 100%;
     -webkit-box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.69); 
     box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.69);
+}
+
+@media screen and (min-width: 961px) and  (max-width: 1245px) {
+    .home .home-left .home-left-button button {
+        display: block;
+        height: 80%;
+    }
+
+    .home-right .home-right-img .img-desktop {
+        display: none;
+    }
+    
+    .home-right .home-right-img .img-tablet {
+        display: block;
+        max-width: 90%;
+        height: 90%;
+    }
 }
 
 @media screen and (max-width: 960px) {
