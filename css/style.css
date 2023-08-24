@@ -297,9 +297,8 @@ section {
     padding: 20px;
     font-size: 1.5rem;
     color: var(--white);
-    background: url(../assets/images/modals/modal-2.png) center/cover no-repeat;
+    background: url(../assets/images/modals/modal-1.png) center/cover no-repeat;
     filter: brightness(150%);
-    /* background-color: var(--white); */
     border: 1px solid #888;
 }
 
