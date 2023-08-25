@@ -104,7 +104,7 @@
             <h2>Paiement</h2>
 
             <div class="checkout-cart-container">
-                <p>Montant de votre panier :</p>
+                <p>Montant de votre panier : <span id="total-panier">0</span>€</p>
             </div>
             
             <form id="payment-form">
@@ -119,6 +119,14 @@
             
                 <button id="submit-payment">Payer</button>
             </form>
+
+            <div id="warning-modal" class="modal">
+                <div class="modal-content warning">
+                    <h3>Avertissement !!!</h3>
+                    <p>Ceci est un projet fictif. Ne saisissez pas de véritables informations bancaires !</p>
+                    <button id="close-warning-modal">Compris</button>
+                </div>
+            </div>            
 
             <div id="fail-checkout-modal" class="modal error-message">
                 <div class="modal-content">
@@ -152,6 +160,7 @@
     </div>
 
     <script src="../js/app.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="../js/checkout.js"></script>
 </body>
 </html>

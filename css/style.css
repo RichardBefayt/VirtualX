@@ -312,6 +312,15 @@ section {
     right: 20px;
 }
 
+.warning {
+    flex-direction: column;
+    text-align: center;
+}
+
+.warning p {
+    margin: 20px 0;
+}
+
 .logout {
     flex-direction: column;
 }

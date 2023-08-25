@@ -199,6 +199,11 @@ function displayCartItems() {
     });
 
     totalAmountElement.textContent = totalAmount.toFixed(0);
+    
+    // Après avoir calculé le montant total
+    localStorage.setItem('totalAmount', totalAmount);
+
+
 }
 
 window.addEventListener('DOMContentLoaded', () => {
