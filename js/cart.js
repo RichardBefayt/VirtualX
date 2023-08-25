@@ -202,8 +202,12 @@ function displayCartItems() {
     
     // Après avoir calculé le montant total
     localStorage.setItem('totalAmount', totalAmount);
+}
 
-
+function clearCart() {
+    localStorage.removeItem('cartItems');
+    localStorage.removeItem('totalAmount'); // Réinitialise le montant total
+    displayCartItems();
 }
 
 window.addEventListener('DOMContentLoaded', () => {

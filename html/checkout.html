@@ -104,7 +104,10 @@
             <h2>Paiement</h2>
 
             <div class="checkout-cart-container">
-                <p>Montant de votre panier : <span id="total-panier">0</span>€</p>
+                <p>Montant de votre panier : 
+                    <div class="checkout-span-container">
+                        <span id="total-panier">0</span>€</p>
+                    </div>
             </div>
 
             <div class="checkout-test">
@@ -115,6 +118,10 @@
             </div>
             
             <form id="payment-form">
+                <div class="img-container">
+                    <img src="../assets/images/checkout/credit-card.png" alt="carte de crédit" />
+                </div>
+                
                 <label for="card-number">Numéro de carte</label>
                 <div id="card-number"></div>
             

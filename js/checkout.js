@@ -19,9 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Récupérer le montant total depuis le localStorage
     const totalAmount = parseFloat(localStorage.getItem('totalAmount'));
 
+    // Vérifier si le montant total est défini et n'est pas NaN
+    const displayTotalAmount = isNaN(totalAmount) ? 0 : totalAmount;
+
     // Afficher le montant total dans l'élément HTML approprié
     const totalAmountElement = document.getElementById('total-panier');
-    totalAmountElement.textContent = totalAmount.toFixed(0);
+totalAmountElement.textContent = displayTotalAmount.toFixed(0);
 
     // Afficher la modal d'avertissement
     const warningModal = document.getElementById("warning-modal");
@@ -36,6 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
     paymentForm.addEventListener("submit", async (event) => {
         event.preventDefault();
         submitButton.disabled = true;
+
+        // Vérifier si le montant total du panier est supérieur à zéro
+        if (totalAmount <= 0) {
+            const errorElement = document.getElementById("fail-checkout-modal");
+            errorElement.querySelector(".modal-content h3").textContent = "Votre panier est vide.";
+            errorElement.style.display = "block";
+            submitButton.disabled = false;
+            return;
+        }
 
         const { token, error } = await stripe.createToken(cardNumber, {
             payment_method_data: {
