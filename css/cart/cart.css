@@ -103,12 +103,27 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    height: 10%;
+    height: 25%;
     margin: 20px 10px;
     padding: 30px;
-    font-size: clamp(1.2rem, 1vw, 1.7rem);
-    border: 1px dashed white;
     z-index: 10;
+    border: 1px dashed white;
+    font-size: clamp(1.2rem, 1vw, 1.7rem);
+}
+
+.cart-footer .total-price {
+    font-size: clamp(1.5rem, 1vw, 2rem);
+}
+
+.cart-footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.cart-footer-bottom button {
+    height: auto;
 }
 
 .cart-footer button {
@@ -160,5 +175,11 @@
     .cart-content ul li .buttons-container button {
         margin: 3px;
     }
-    
+}
+
+@media screen and (max-width: 680px) {
+    .cart-footer {
+        flex-direction: column;
+        height: auto;
+    }
 }

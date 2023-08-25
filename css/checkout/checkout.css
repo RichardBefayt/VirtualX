@@ -34,6 +34,8 @@
     font-size: clamp(1.3rem, 1.5vw, 1.5rem);
     text-align: justify;
     line-height: 2em;
+    color: var(--black);
+    background-color: var(--white);
     backdrop-filter: blur(7px);
     -webkit-box-shadow: var(---webkit-box-shadow);
     box-shadow: var(--box-shadow);
